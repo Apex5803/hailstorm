@@ -87,8 +87,7 @@ public:
 	static std::shared_ptr<DoubleSolenoid> ballCollectorcollectorSolenoid1;
 	static std::shared_ptr<DoubleSolenoid> ballCollectorcollectorSolenoid2;
 	static std::shared_ptr<SpeedController> magiKarpetbeltMotor;
-	static std::shared_ptr<SpeedController> feederfeederWheelLow;
-	static std::shared_ptr<SpeedController> feederfeederWheelHigh;
+	static std::shared_ptr<SpeedController> feederfeederWheel;
 	static std::shared_ptr<SpeedController> shootershooterWheelPrimary;
 	static std::shared_ptr<SpeedController> shootershooterWheelBooster;
 	static std::shared_ptr<Encoder> shootershooterEncoderPrimary;

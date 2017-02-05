@@ -30,7 +30,7 @@ std::shared_ptr<SpeedController> RobotMap::ballCollectorintakeRoller;
 std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid1;
 std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid2;
 std::shared_ptr<SpeedController> RobotMap::magiKarpetbeltMotor;
-std::shared_ptr<SpeedController> RobotMap::feederfeederWheelLow;
+std::shared_ptr<SpeedController> RobotMap::feederfeederWheel;
 std::shared_ptr<SpeedController> RobotMap::feederfeederWheelHigh;
 std::shared_ptr<SpeedController> RobotMap::shootershooterWheelPrimary;
 std::shared_ptr<SpeedController> RobotMap::shootershooterWheelBooster;
@@ -91,11 +91,10 @@ void RobotMap::init() {
     magiKarpetbeltMotor.reset(new VictorSP(MAGIKARPET_BELT_MOTOR));
     lw->AddActuator("MagiKarpet", "beltMotor", std::static_pointer_cast<VictorSP>(magiKarpetbeltMotor));
     
-    feederfeederWheelLow.reset(new VictorSP(F_WHEEL_LOW));
-    lw->AddActuator("Feeder", "feederWheelLow", std::static_pointer_cast<VictorSP>(feederfeederWheelLow));
+    feederfeederWheel.reset(new VictorSP(F_WHEEL_LOW));
+    lw->AddActuator("Feeder", "feederWheel", std::static_pointer_cast<VictorSP>(feederfeederWheel));
     
-    feederfeederWheelHigh.reset(new VictorSP(F_WHEEL_HIGH));
-    lw->AddActuator("Feeder", "feederWheelHigh", std::static_pointer_cast<VictorSP>(feederfeederWheelHigh));
+
     
     shootershooterWheelPrimary.reset(new TalonSRX(S_WHEEL_PRIMARY));
     lw->AddActuator("Shooter", "shooterWheelPrimary", std::static_pointer_cast<TalonSRX>(shootershooterWheelPrimary));
