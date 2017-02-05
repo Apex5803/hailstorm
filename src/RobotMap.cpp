@@ -31,7 +31,6 @@ std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid1;
 std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid2;
 std::shared_ptr<SpeedController> RobotMap::magiKarpetbeltMotor;
 std::shared_ptr<SpeedController> RobotMap::feederfeederWheel;
-std::shared_ptr<SpeedController> RobotMap::feederfeederWheelHigh;
 std::shared_ptr<SpeedController> RobotMap::shootershooterWheelPrimary;
 std::shared_ptr<SpeedController> RobotMap::shootershooterWheelBooster;
 std::shared_ptr<Encoder> RobotMap::shootershooterEncoderPrimary;
