@@ -17,7 +17,7 @@ void MoveGearer::Initialize(){
 }
 
 void MoveGearer::Execute(){
-	if(Robot::oi->getXBoxController()->GetBumper >= .75)
+	if(Robot::oi->getXBoxController()->GetBumper(frc::GenericHID::kLeftHand) == true)
 		{
 			Robot::gearer->In();
 			Robot::gearer->Extend();
