@@ -104,6 +104,7 @@ void RobotMap::init() {
     lw->AddActuator("Shooter", "shooterWheelPrimary", std::static_pointer_cast<TalonSRX>(shootershooterWheelPrimary));
     
     shootershooterWheelBooster.reset(new TalonSRX(S_WHEEL_BOOSTER));
+    shootershooterWheelBooster->SetInverted(true);
     lw->AddActuator("Shooter", "shooterWheelBooster", std::static_pointer_cast<TalonSRX>(shootershooterWheelBooster));
     
     shootershooterEncoderPrimary.reset(new Encoder(S_ENCODER_A_PRIMARY, S_ENCODER_B_PRIMARY, false, Encoder::k4X));

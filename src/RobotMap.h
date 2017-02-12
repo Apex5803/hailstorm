@@ -32,21 +32,21 @@ const int CHANNEL_B_RIGHT_BASE_ENCODER = 3;
 const int DRIVE_GYRO = 4;
 
 // drive base speed controllers
-const int DRIVE_SPEED_LEFT_1 = 0;
-const int DRIVE_SPEED_LEFT_2 = 1;
-const int DRIVE_SPEED_RIGHT_1 = 2;
-const int DRIVE_SPEED_RIGHT_2 = 3;
+const int DRIVE_SPEED_LEFT_1 = 2;
+const int DRIVE_SPEED_LEFT_2 = 3;
+const int DRIVE_SPEED_RIGHT_1 = 0;
+const int DRIVE_SPEED_RIGHT_2 = 1;
 
 // gearer stuff
 const int GEAR_DETECTOR = 0;
-const int GEAR_ROLLER = 1;
+const int GEAR_ROLLER = 4;
 const int GEAR_SOLENOID_1_FORWARD_CHANNEL= 2;
 const int GEAR_SOLENOID_1_REVERSE_CHANNEL = 3;
 const int GEAR_SOLENOID_2_FORWARD_CHANNEL = 4;
 const int GEAR_SOLENOID_2_REVERSE_CHANNEL = 5;
 
 //ball collecter stuff
-const int INTAKE_ROLLER = 0;
+const int INTAKE_ROLLER = 5;
 const int COLLECTOR_SOLENOID_1_FORWARD_CHANNEL = 1;
 const int COLLECTOR_SOLENOID_1_REVERSE_CHANNEL = 2;
 const int COLLECTOR_SOLENOID_2_FORWARD_CHANNEL = 3;
@@ -56,8 +56,10 @@ const int COLLECTOR_SOLENOID_2_REVERSE_CHANNEL = 4;
 const int MAGIKARPET_BELT_MOTOR = 8;
 
 // feeder
-const int F_WHEEL_LOW = 9;
-const int F_WHEEL_HIGH = 10;
+const int F_WHEEL_LOW = 6;
+
+// funnel
+const int F_WHEEL_HIGH = 7;
 
 // shooter
 const int S_WHEEL_PRIMARY = 11;

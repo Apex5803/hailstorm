@@ -27,8 +27,6 @@ void MoveBallCollector::Execute(){
 	}
 }
 
-
-
 bool MoveBallCollector::IsFinished(){
 	return false;
 }
