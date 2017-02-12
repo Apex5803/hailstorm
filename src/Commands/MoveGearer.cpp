@@ -17,7 +17,7 @@ void MoveGearer::Initialize(){
 }
 
 void MoveGearer::Execute(){
-	if(Robot::oi->getXBoxController()->GetBumper(frc::GenericHID::kLeftHand) == true)
+	/*if(Robot::oi->getXBoxController()->GetBumper(frc::GenericHID::kLeftHand) == true)
 		{
 			Robot::gearer->In();
 			Robot::gearer->Extend();
@@ -26,7 +26,10 @@ void MoveGearer::Execute(){
 		{
 			Robot::gearer->Off();
 			Robot::gearer->Retract();
-		}
+		}*/
+
+
+	Robot::gearer->In();
 }
 
 bool MoveGearer::IsFinished(){
