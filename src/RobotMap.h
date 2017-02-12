@@ -34,10 +34,8 @@ const int DRIVE_GYRO = 4;
 // drive base speed controllers
 const int DRIVE_SPEED_LEFT_1 = 0;
 const int DRIVE_SPEED_LEFT_2 = 1;
-const int DRIVE_SPEED_LEFT_3 = 2;
-const int DRIVE_SPEED_RIGHT_1 = 3;
-const int DRIVE_SPEED_RIGHT_2 = 4;
-const int DRIVE_SPEED_RIGHT_3 = 5;
+const int DRIVE_SPEED_RIGHT_1 = 2;
+const int DRIVE_SPEED_RIGHT_2 = 3;
 
 // gearer stuff
 const int GEAR_DETECTOR = 0;
@@ -79,8 +77,10 @@ public:
 	static std::shared_ptr<Encoder> driveTraindBaseEncoderL;
 	static std::shared_ptr<Encoder> driveTraindBaseEncoderR;
 
-	static std::shared_ptr<SpeedController> driveTraindBaseL;
-	static std::shared_ptr<SpeedController> driveTraindBaseR;
+	static std::shared_ptr<SpeedController> driveTraindBaseL1;
+	static std::shared_ptr<SpeedController> driveTraindBaseL2;
+	static std::shared_ptr<SpeedController> driveTraindBaseR1;
+	static std::shared_ptr<SpeedController> driveTraindBaseR2;
 
 	static std::shared_ptr<AnalogGyro> driveTraindBaseGyro;
 	static std::shared_ptr<DigitalInput> gearergearDetect;
@@ -92,6 +92,7 @@ public:
 	static std::shared_ptr<DoubleSolenoid> ballCollectorcollectorSolenoid2;
 	static std::shared_ptr<SpeedController> magiKarpetbeltMotor;
 	static std::shared_ptr<SpeedController> feederfeederWheel;
+	static std::shared_ptr<SpeedController> feederfeederWheel2;
 	static std::shared_ptr<SpeedController> shootershooterWheelPrimary;
 	static std::shared_ptr<SpeedController> shootershooterWheelBooster;
 	static std::shared_ptr<Encoder> shootershooterEncoderPrimary;
