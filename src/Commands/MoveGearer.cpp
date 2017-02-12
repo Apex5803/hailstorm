@@ -29,14 +29,14 @@ void MoveGearer::Execute(){
 		}
 }
 
-bool IsFinished(){
+bool MoveGearer::IsFinished(){
 	return false;
 }
 
-void End(){
+void MoveGearer::End(){
 
 }
 
-void Interrupted(){
+void MoveGearer::Interrupted(){
 
 }
