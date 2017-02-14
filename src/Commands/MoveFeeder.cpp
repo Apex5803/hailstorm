@@ -45,7 +45,7 @@ bool MoveFeeder::IsFinished(){
 }
 
 void MoveFeeder::End(){
-
+	Robot::feeder->Off();
 }
 
 void MoveFeeder::Interrupted(){
