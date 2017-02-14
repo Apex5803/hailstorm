@@ -10,7 +10,7 @@
 #include <math.h> //we need math!
 #include <iostream>
 
-VisionDataResult VisionProcessing::GetRawData() {
+std::tuple<double,double,double> VisionProcessing::GetRawData() {
 
 	table = NetworkTable::GetTable("GRIP/myContoursReport");
 
@@ -49,7 +49,7 @@ VisionDataResult VisionProcessing::GetRawData() {
 		}
 
 	//Return the position of the largest target
-	return VisionDataResult(largest, largestX, largestY);
+	return std::make_tuple(largest, largestX, largestY);
 }
 
 std::tuple<double,double> VisionProcessing::GetScaledData(double Xpixels, double Ypixels){

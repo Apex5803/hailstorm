@@ -13,7 +13,7 @@
 
 class VisionProcessing {
 public:
-	VisionDataResult GetRawData(); //Get new data from the GRIP vision system NetworkTables.This will return Area, X, and Y Position of the largest contour found
+	std::tuple<double,double,double> GetRawData(); //Get new data from the GRIP vision system NetworkTables.This will return Area, X, and Y Position of the largest contour found
 	std::tuple<double,double> GetScaledData(double Xpixels, double Ypixels); //Convert pixels a heading and pitch setpoint (pixels to heading -1 to 1)
 
 private:
