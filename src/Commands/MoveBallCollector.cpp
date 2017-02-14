@@ -18,15 +18,16 @@ void MoveBallCollector::Initialize(){
 }
 
 void MoveBallCollector::Execute(){
-	/*if(Robot::oi->getXBoxController()->GetAButton() == true &&
-			Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT ) {
+	if(Robot::oi->getXBoxController()->GetAButton() == true
+			&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
+			) {
 		Robot::ballCollector->In();
 	}
 	else
 	{
 		Robot::ballCollector->MotorOff();
-	}*/
-	Robot::ballCollector->In();
+	}
+	//Robot::ballCollector->In();
 }
 
 bool MoveBallCollector::IsFinished(){

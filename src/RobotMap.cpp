@@ -96,16 +96,18 @@ void RobotMap::init() {
     
     feederfeederWheel.reset(new VictorSP(F_WHEEL_LOW));
     lw->AddActuator("Feeder", "feederWheel", std::static_pointer_cast<VictorSP>(feederfeederWheel));
+    feederfeederWheel->SetInverted(true);
+
     
     feederfeederWheel2.reset(new VictorSP(F_WHEEL_HIGH));
     lw->AddActuator("Feeder2", "feederWheel2", std::static_pointer_cast<VictorSP>(feederfeederWheel2));
 
-    shootershooterWheelPrimary.reset(new TalonSRX(S_WHEEL_PRIMARY));
-    lw->AddActuator("Shooter", "shooterWheelPrimary", std::static_pointer_cast<TalonSRX>(shootershooterWheelPrimary));
+    shootershooterWheelPrimary.reset(new CANTalon(S_WHEEL_PRIMARY));
+    lw->AddActuator("Shooter", "shooterWheelPrimary", std::static_pointer_cast<CANTalon>(shootershooterWheelPrimary));
     
-    shootershooterWheelBooster.reset(new TalonSRX(S_WHEEL_BOOSTER));
+    shootershooterWheelBooster.reset(new CANTalon(S_WHEEL_BOOSTER));
     shootershooterWheelBooster->SetInverted(true);
-    lw->AddActuator("Shooter", "shooterWheelBooster", std::static_pointer_cast<TalonSRX>(shootershooterWheelBooster));
+    lw->AddActuator("Shooter", "shooterWheelBooster", std::static_pointer_cast<CANTalon>(shootershooterWheelBooster));
     
     shootershooterEncoderPrimary.reset(new Encoder(S_ENCODER_A_PRIMARY, S_ENCODER_B_PRIMARY, false, Encoder::k4X));
     lw->AddSensor("Shooter", "shooterEncoderPrimary", shootershooterEncoderPrimary);
