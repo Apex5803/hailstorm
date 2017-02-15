@@ -19,7 +19,10 @@ void MoveMagiKarpet::Initialize(){
 }
 
 void MoveMagiKarpet::Execute(){
+			Robot::magiKarpet->In();
 
+
+	/*
 	if (m_released_button)
 	{
 		m_button_count++;
@@ -39,6 +42,8 @@ void MoveMagiKarpet::Execute(){
 	{
 		Robot::magiKarpet->Off();
 	}
+*/
+
 }
 
 bool MoveMagiKarpet::IsFinished(){
@@ -46,9 +51,9 @@ bool MoveMagiKarpet::IsFinished(){
 }
 
 void MoveMagiKarpet::End(){
-
+	Robot::magiKarpet->Off();
 }
 
 void MoveMagiKarpet::Interrupted(){
-
+	Robot::magiKarpet->Off();
 }

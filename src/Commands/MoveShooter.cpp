@@ -29,5 +29,5 @@ void MoveShooter::End(){
 }
 
 void MoveShooter::Interrupted(){
-
+	Robot::shooter->Off();
 }

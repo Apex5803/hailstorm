@@ -25,10 +25,10 @@
  */
 
 // drive base sensors
-const int CHANNEL_A_LEFT_BASE_ENCODER = 10;
-const int CHANNEL_B_LEFT_BASE_ENCODER = 11;
-const int CHANNEL_A_RIGHT_BASE_ENCODER = 12;
-const int CHANNEL_B_RIGHT_BASE_ENCODER = 13;
+const int CHANNEL_A_LEFT_BASE_ENCODER = 13;
+const int CHANNEL_B_LEFT_BASE_ENCODER = 12;
+const int CHANNEL_A_RIGHT_BASE_ENCODER = 10;
+const int CHANNEL_B_RIGHT_BASE_ENCODER = 11;
 const int DRIVE_GYRO = 4;
 
 // drive base speed controllers

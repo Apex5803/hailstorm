@@ -18,18 +18,15 @@ void MoveBallCollector::Initialize(){
 }
 
 void MoveBallCollector::Execute(){
-	if(Robot::oi->getXBoxController()->GetAButton() == true
+	if(Robot::oi->getXBoxController()->GetAButton()
 			&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
 			) {
 		Robot::ballCollector->In();
-		printf("A Button was pressed");
 	}
 	else
 	{
 		Robot::ballCollector->MotorOff();
-		printf("A Button wasn't pressed");
 	}
-	//Robot::ballCollector->In();
 }
 
 bool MoveBallCollector::IsFinished(){
@@ -41,5 +38,5 @@ void MoveBallCollector::End(){
 }
 
 void MoveBallCollector::Interrupted(){
-
+	Robot::ballCollector->MotorOff();
 }

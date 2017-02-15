@@ -1,0 +1,10 @@
+diff a/src/Commands/MoveFeeder.cpp b/src/Commands/MoveFeeder.cpp	(rejected hunks)
+@@ -41,7 +41,7 @@
+ 			Robot::feeder->Off();
+ 			printf("B Button wasn't pressed");
+ 		}
+-
++*/
+ }
+ 
+ bool MoveFeeder::IsFinished(){

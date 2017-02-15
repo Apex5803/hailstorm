@@ -39,11 +39,13 @@ OI::OI() {
 
     gearerButtonReverse.reset(new JoystickButton(xBoxController.get(), 4));
     gearerButtonReverse->WhileHeld(new MoveGearer(false));
+
     gearerButtonForward.reset(new JoystickButton(xBoxController.get(), 5));
 	gearerButtonForward->WhileHeld(new MoveGearer(false));
 
 	magikarpetButton.reset(new JoystickButton(xBoxController.get(), 2));
 	magikarpetButton->WhileHeld(new MoveMagiKarpet());
+
 	feederButton.reset(new JoystickButton(xBoxController.get(), 2));
 	feederButton->WhileHeld(new MoveFeeder());
 
