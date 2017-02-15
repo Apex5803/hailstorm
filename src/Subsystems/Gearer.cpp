@@ -53,8 +53,7 @@ void Gearer::Retract(){
 }
 
 void Gearer::Off(){
-	 gearSolenoid1->Set(DoubleSolenoid::Value::kOff);
-	 gearSolenoid2->Set(DoubleSolenoid::Value::kOff);
+	gearRoller->Set(0.);
 }
 
 void Gearer::In(){
