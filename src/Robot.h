@@ -52,5 +52,10 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+
+	//initialize Vision variables
+	double rawArea, rawX, rawY;
+	double setpointX, distanceY;
+	double headingSetpoint, detectedDistance;
 };
 #endif

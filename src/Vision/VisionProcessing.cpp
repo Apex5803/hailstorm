@@ -6,9 +6,21 @@
  */
 
 #include <Vision/VisionProcessing.h>
-#include <Vision/VisionDataResult.h>
 #include <math.h> //we need math!
 #include <iostream>
+
+VisionProcessing::VisionProcessing(){ //constructor
+
+	//look for targets with a minimum area (or this can be done in GRIP filtering)
+	largest = 0; //initialize largest target
+	largestX = 0;
+	largestY = 0;
+	secondLargest = 0; //initialize 2nd largest target --> we may not have to use this right now
+	secondLargestX = 0;
+	secondLargestY = 0;
+	yDistance = 0; //this can be used to determine how far away the target is
+
+}
 
 std::tuple<double,double,double> VisionProcessing::GetRawData() {
 
@@ -20,19 +32,9 @@ std::tuple<double,double,double> VisionProcessing::GetRawData() {
 	y = table->GetNumberArray("centerY", llvm::ArrayRef<double>());
 
 
-	//look for targets with a minimum area (or this can be done in GRIP filtering)
-	largest = 0; //initialize largest target
-	largestX = 0;
-	largestY = 0;
-	secondLargest = 0; //initialize 2nd largest target --> we may not have to use this right now
-	secondLargestX = 0;
-	secondLargestY = 0;
-	yDistance = 0; //declare a large number
-
-
 	for (unsigned int i=0; i < arr.size(); i++){
 
-		if(arr[i]> largest) //find the largest array, record the size and X Y Position
+		if(arr[i]> largest) //find the largest area, record the size and X Y Position
 			{
 				largest=arr[i];
 				largestX = x[i];
