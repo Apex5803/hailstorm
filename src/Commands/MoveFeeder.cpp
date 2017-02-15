@@ -19,7 +19,8 @@ void MoveFeeder::Initialize() {
 }
 
 void MoveFeeder::Execute() {
-	if (m_released_button)
+bool pressing = Robot::oi->getXBoxController()->GetBButton();
+	if (m_released_button && pressing)
 		{
 			m_button_count++;
 			m_released_button = false;
@@ -33,11 +34,14 @@ void MoveFeeder::Execute() {
 		if (m_button_count % 2 == 1)
 		{
 			Robot::feeder->FeedBall();
+			printf("B Button was pressed");
 		}
 		else
 		{
 			Robot::feeder->Off();
+			printf("B Button wasn't pressed");
 		}
+
 }
 
 bool MoveFeeder::IsFinished(){

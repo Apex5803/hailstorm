@@ -38,9 +38,9 @@ OI::OI() {
     ballCollectorForward->WhileHeld(new MoveBallCollector());
 
     gearerButtonReverse.reset(new JoystickButton(xBoxController.get(), 4));
-    gearerButtonReverse->WhileHeld(new MoveGearer());
+    gearerButtonReverse->WhileHeld(new MoveGearer(false));
     gearerButtonForward.reset(new JoystickButton(xBoxController.get(), 5));
-	gearerButtonForward->WhileHeld(new MoveGearer());
+	gearerButtonForward->WhileHeld(new MoveGearer(false));
 
 	magikarpetButton.reset(new JoystickButton(xBoxController.get(), 2));
 	magikarpetButton->WhileHeld(new MoveMagiKarpet());
@@ -63,7 +63,7 @@ OI::OI() {
    SmartDashboard::PutData("MoveBallCollector", new MoveBallCollector());
    SmartDashboard::PutData("MoveMagiKarpet", new MoveMagiKarpet());
    SmartDashboard::PutData("MoveFeeder", new MoveFeeder());
-   SmartDashboard::PutData("MoveGearer", new MoveGearer());
+   SmartDashboard::PutData("MoveGearer", new MoveGearer(false));
 
 }
 

@@ -22,10 +22,12 @@ void MoveBallCollector::Execute(){
 			&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
 			) {
 		Robot::ballCollector->In();
+		printf("A Button was pressed");
 	}
 	else
 	{
 		Robot::ballCollector->MotorOff();
+		printf("A Button wasn't pressed");
 	}
 	//Robot::ballCollector->In();
 }
