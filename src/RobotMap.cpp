@@ -56,20 +56,25 @@ void RobotMap::init() {
 
 
     driveTraindBaseL1.reset(new VictorSP(DRIVE_SPEED_LEFT_1));
+    driveTraindBaseL1->SetInverted(true);
     lw->AddActuator("DriveTrain", "dBaseL1", std::static_pointer_cast<VictorSP>(driveTraindBaseL1));
 
-    driveTraindBaseL1.reset(new VictorSP(DRIVE_SPEED_LEFT_2));
+    driveTraindBaseL2.reset(new VictorSP(DRIVE_SPEED_LEFT_2));
+    driveTraindBaseL2->SetInverted(true);
     lw->AddActuator("DriveTrain", "dBaseL2", std::static_pointer_cast<VictorSP>(driveTraindBaseL2));
 
     driveTraindBaseR1.reset(new VictorSP(DRIVE_SPEED_RIGHT_1));
+    driveTraindBaseR1->SetInverted(true);
     lw->AddActuator("DriveTrain", "dBaseR1", std::static_pointer_cast<VictorSP>(driveTraindBaseR1));
     
     driveTraindBaseR2.reset(new VictorSP(DRIVE_SPEED_RIGHT_2));
+    driveTraindBaseR2->SetInverted(true);
     lw->AddActuator("DriveTrain", "dBaseR2", std::static_pointer_cast<VictorSP>(driveTraindBaseR2));
 
     driveTraindBaseGyro.reset(new AnalogGyro(DRIVE_GYRO));
     lw->AddSensor("DriveTrain", "dBaseGyro", driveTraindBaseGyro);
     driveTraindBaseGyro->SetSensitivity(0.007);
+
     gearergearDetect.reset(new DigitalInput(GEAR_DETECTOR));
     lw->AddSensor("Gearer", "gearDetect", gearergearDetect);
     
