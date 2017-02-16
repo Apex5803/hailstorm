@@ -9,7 +9,8 @@
 
 MoveShooter::MoveShooter() {
 	// TODO Auto-generated constructor stub
-	Requires(Robot::shooter.get());
+	//Requires(Robot::shooter.get());
+	//Requires(Robot::talonShooter.get());
 }
 
 void MoveShooter::Initialize(){
@@ -17,7 +18,8 @@ void MoveShooter::Initialize(){
 }
 
 void MoveShooter::Execute(){
-	Robot::shooter->ShootManual();
+	//Robot::shooter->ShootManual();
+	Robot::talonShooter->SetRPM(1000);
 }
 
 bool MoveShooter::IsFinished(){
@@ -25,9 +27,10 @@ bool MoveShooter::IsFinished(){
 }
 
 void MoveShooter::End(){
-	Robot::shooter->Off();
+	//Robot::shooter->Off();
+	Robot::talonShooter->SetRPM(0);
 }
 
 void MoveShooter::Interrupted(){
-	Robot::shooter->Off();
+	End();
 }
