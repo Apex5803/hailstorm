@@ -12,16 +12,24 @@ MoveMagiKarpet::MoveMagiKarpet(): Command() {
 	Requires(Robot::magiKarpet.get());
 	this-> m_button_count = 0;
 	m_released_button = true;
-}
+
+
+
+
+};
 
 void MoveMagiKarpet::Initialize(){
 
 }
 
 void MoveMagiKarpet::Execute(){
+		if(Robot::oi->getXBoxController()->GetBButton()){
 			Robot::magiKarpet->In();
+		}
 
-
+		if(Robot::oi->getXBoxController()->GetXButton()){
+			Robot::magiKarpet->Out();
+			}
 	/*
 	if (m_released_button)
 	{

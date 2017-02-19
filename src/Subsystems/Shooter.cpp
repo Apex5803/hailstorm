@@ -74,8 +74,8 @@ void Shooter::InitDefaultCommand() {
 
 //spins up Booster wheel and Primary wheel
 void Shooter::ShootManual(){
-	shooterWheelPrimary->Set(.5);
-	shooterWheelBooster->Set(.5);
+	shooterWheelPrimary->Set(1.0);
+	shooterWheelBooster->Set(1.0);
 }
 
 

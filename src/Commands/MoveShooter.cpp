@@ -5,7 +5,7 @@
  *      Author: first
  */
 
-#include <Commands/MoveShooter.h>
+#include <Commands/MoveShooter.h>\
 
 MoveShooter::MoveShooter() {
 	// TODO Auto-generated constructor stub
@@ -19,7 +19,7 @@ void MoveShooter::Initialize(){
 
 void MoveShooter::Execute(){
 	//Robot::shooter->ShootManual();
-	Robot::talonShooter->SetRPM(1000);
+	Robot::talonShooter->SetRPM(12000);
 }
 
 bool MoveShooter::IsFinished(){

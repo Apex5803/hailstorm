@@ -49,6 +49,12 @@ OI::OI() {
 	feederButton.reset(new JoystickButton(xBoxController.get(), 2));
 	feederButton->WhileHeld(new MoveFeeder());
 
+	magikarpetreverseButton.reset(new JoystickButton(xBoxController.get(), 3));
+	magikarpetreverseButton->WhileHeld(new MoveMagiKarpet());
+
+	feederreverseButton.reset(new JoystickButton(xBoxController.get(), 3));
+	feederreverseButton->WhileHeld(new MoveFeeder());
+
 	shooterButton.reset(new JoystickButton(xBoxController.get(), 6));
 	shooterButton->WhileHeld(new MoveShooter());
     

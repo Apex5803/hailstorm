@@ -19,8 +19,14 @@ void MoveFeeder::Initialize() {
 }
 
 void MoveFeeder::Execute() {
-		Robot::feeder->FeedBall();
 
+		if(Robot::oi->getXBoxController()->GetBButton()){
+			Robot::feeder->FeedBall();
+		}
+
+		if (Robot::oi->getXBoxController()->GetXButton()){
+			Robot::feeder->ReturnBall();
+		}
 
 	/*
 bool pressing = Robot::oi->getXBoxController()->GetBButton();

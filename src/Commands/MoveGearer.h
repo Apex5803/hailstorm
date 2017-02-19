@@ -9,6 +9,7 @@
 #define SRC_COMMANDS_MOVEGEARER_H_
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "WPILib.h"
 
 class MoveGearer: public Command {
 public:
@@ -20,6 +21,7 @@ public:
 	virtual void Interrupted();
 private:
 	bool pushedButton;
+
 };
 
 #endif /* SRC_COMMANDS_MOVEGEARER_H_ */

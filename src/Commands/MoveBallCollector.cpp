@@ -19,7 +19,7 @@ void MoveBallCollector::Initialize(){
 
 void MoveBallCollector::Execute(){
 	if(Robot::oi->getXBoxController()->GetAButton()
-			&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
+			//&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
 			) {
 		Robot::ballCollector->In();
 	}

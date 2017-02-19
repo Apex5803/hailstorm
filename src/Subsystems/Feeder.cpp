@@ -35,13 +35,13 @@ void Feeder::InitDefaultCommand() {
 }
 
 void Feeder::FeedBall(){
-	feederWheel->Set(.75);
-	feederWheel2->Set(.75);
+	feederWheel->Set(.95);
+	feederWheel2->Set(.95);
 }
 
 void Feeder::ReturnBall(){
-	feederWheel->Set(-.75);
-	feederWheel2->Set(-.75);
+	feederWheel->Set(-.95);
+	feederWheel2->Set(-.95);
 }
 
 void Feeder::Off(){

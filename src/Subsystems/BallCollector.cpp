@@ -55,11 +55,11 @@ void BallCollector::Off(){
 }
 
 void BallCollector::In(){
-	intakeRoller->Set(-.5);
+	intakeRoller->Set(-1.);
 }
 
 void BallCollector::Out(){
-	intakeRoller->Set(.5);
+	intakeRoller->Set(1.);
 }
 
 void BallCollector::MotorOff(){

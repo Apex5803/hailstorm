@@ -10,6 +10,7 @@
 #include "SmartDashboard/SmartDashboard.h"
 #include "LiveWindow/LiveWindow.h"
 #include "CANTalon.h"
+#include "llvm/StringRef.h"
 
 TalonShooter::TalonShooter() {
 	// TODO Auto-generated constructor stub
@@ -22,8 +23,11 @@ TalonShooter::TalonShooter() {
 
     shooterWheelBooster->ConfigEncoderCodesPerRev(3);
 
+    shooterWheelBooster->SetControlMode(CANTalon::kSpeed);
+
     shooterWheelPrimary->SetTalonControlMode(CANTalon::kFollowerMode);
     shooterWheelPrimary->Set(shooterWheelBooster->GetDeviceID());
+
 
     shooterWheelBooster->SetClosedLoopOutputDirection(false);
     shooterWheelPrimary->SetClosedLoopOutputDirection(true);
@@ -47,10 +51,10 @@ TalonShooter::TalonShooter() {
 
     //set closed loop gains
     shooterWheelPrimary->SelectProfileSlot(0);
-    shooterWheelPrimary->SetF(0.0);
-    shooterWheelPrimary->SetP(0.1);
-    shooterWheelPrimary->SetI(0.0);
-    shooterWheelPrimary->SetD(0.0);
+    //shooterWheelPrimary->SetF(0.0);
+    //shooterWheelPrimary->SetP(0.1);
+    //shooterWheelPrimary->SetI(0.0);
+    //shooterWheelPrimary->SetD(0.0);
 
 }
 
@@ -58,5 +62,12 @@ void TalonShooter::SetRPM(double rpm){
 	shooterWheelBooster->Set(rpm);
 	std::cout << rpm << "rpm \n";
 	std::cout << shooterWheelBooster->GetSetpoint() << " is setpoint and speed is: " << shooterWheelBooster->GetSpeed() << "\n";
-	std::cout << shooterWheelPrimary->GetSetpoint() << " is setpoint of primary \n";
+	//std::cout << shooterWheelPrimary->GetSetpoint() << " is setpoint of primary \n";
+	std::cout << "Err: " << shooterWheelBooster->GetClosedLoopError() << "\n";
+	std::cout << "P: "<< shooterWheelBooster->GetP();
+	std::cout << "I: "<< shooterWheelBooster->GetI();
+	std::cout << "D: "<< shooterWheelBooster->GetD();
+	std::cout << "F: "<< shooterWheelBooster->GetF() << "\n";
+	SmartDashboard::PutNumber("RPM", shooterWheelBooster->GetSpeed());
+	lw->AddSensor("RPM", "Shooter", shooterWheelBooster->GetSpeed());
 }
