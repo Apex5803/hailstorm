@@ -13,15 +13,14 @@
 
 class MoveGearer: public Command {
 public:
-	MoveGearer(bool pushedButton);
+	MoveGearer(bool isAuto=false);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
 private:
-	bool pushedButton;
-
+	bool isAuto;
 };
 
 #endif /* SRC_COMMANDS_MOVEGEARER_H_ */
