@@ -75,7 +75,7 @@ const int S_ENCODER_B_BOOSTER = 8;
 
 
 //Intake Roller Current Limit
-const double INTAKE_ROLLER_CURRENT_LIMIT = 20.0;
+const double INTAKE_ROLLER_CURRENT_LIMIT = 50.0;
 
 class RobotMap {
 public:

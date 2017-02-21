@@ -17,7 +17,6 @@ MultiSpeedController::MultiSpeedController(int motor_ports[], int size) {
 	for (int i = 0; i < num_motors; i++){
 		this->motor_ports[i] = motor_ports[i];
 	}
-
 }
 
  MultiSpeedController::~MultiSpeedController(){

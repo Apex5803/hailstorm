@@ -46,7 +46,7 @@ public:
 	void In();
 
 	//collector motors go outward
-	void Out();
+	void Climb();
 
 	//Motors turn off
 	void MotorOff();

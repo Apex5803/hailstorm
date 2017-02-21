@@ -23,10 +23,6 @@ void MoveBallCollector::Execute(){
 			) {
 		Robot::ballCollector->In();
 	}
-	else
-	{
-		Robot::ballCollector->MotorOff();
-	}
 }
 
 bool MoveBallCollector::IsFinished(){
@@ -38,5 +34,5 @@ void MoveBallCollector::End(){
 }
 
 void MoveBallCollector::Interrupted(){
-	Robot::ballCollector->MotorOff();
+End();
 }
