@@ -45,9 +45,7 @@ bool TankDrive::IsFinished(){
 }
 
 void TankDrive::End(){
-	speed = 0;
-	//Robot::driveTrain->MyDrive(speed, speed);
-	Robot::drive->MyDrive(speed, speed);
+	Robot::drive->MyDrive((float)0, (float)0);
 }
 
 void TankDrive::Interrupted(){

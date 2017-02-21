@@ -69,5 +69,4 @@ void TalonShooter::SetRPM(double rpm){
 	std::cout << "D: "<< shooterWheelBooster->GetD();
 	std::cout << "F: "<< shooterWheelBooster->GetF() << "\n";
 	SmartDashboard::PutNumber("RPM", shooterWheelBooster->GetSpeed());
-	lw->AddSensor("RPM", "Shooter", shooterWheelBooster->GetSpeed());
 }

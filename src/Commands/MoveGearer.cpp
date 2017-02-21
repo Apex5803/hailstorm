@@ -7,10 +7,10 @@
 
 #include <Commands/MoveGearer.h>
 
-MoveGearer::MoveGearer(bool p_pushedButton): Command() {
+MoveGearer::MoveGearer(bool isAuto): Command() {
 	// TODO Auto-generated constructor stub
-	pushedButton = p_pushedButton;
 	Requires(Robot::gearer.get());
+	this->isAuto = isAuto;
 }
 
 void MoveGearer::Initialize(){
@@ -26,7 +26,13 @@ void MoveGearer::Execute(){
 			//Robot::gearer->UnSecure();
 	}
 
-	if(Robot::oi->getXBoxController()->GetYButton()){
+	if(Robot::oi->getXBoxController()->GetTriggerAxis(GenericHID::kLeftHand) >=.75){
+		Robot::gearer->Out();
+		Robot::gearer->Extend();
+	}
+
+	if(isAuto)
+	{
 		Robot::gearer->Out();
 		Robot::gearer->Extend();
 	}
