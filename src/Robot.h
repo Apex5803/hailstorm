@@ -34,6 +34,9 @@
 
 class Robot : public IterativeRobot {
 public:
+
+
+
 	std::unique_ptr<Command> autonomousCommand;
 	static std::unique_ptr<OI> oi;
 	LiveWindow *lw = LiveWindow::GetInstance();

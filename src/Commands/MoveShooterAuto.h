@@ -1,27 +1,34 @@
 /*
- * MoveShooter.h
+ * MoveShooterAuto.h
  *
- *  Created on: Feb 11, 2017
+ *  Created on: Feb 21, 2017
  *      Author: first
  */
 
-#ifndef SRC_COMMANDS_MOVESHOOTER_H_
-#define SRC_COMMANDS_MOVESHOOTER_H_
+#ifndef SRC_COMMANDS_MOVESHOOTERAUTO_H_
+#define SRC_COMMANDS_MOVESHOOTERAUTO_H_
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-class MoveShooter: public Command {
+class MoveShooterAuto: public Command {
 private:
 	double TalonSetPoint;
 
 public:
-	MoveShooter();
+
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
 	void SetSetPoint(double);
+
+
+
+
+
+	MoveShooterAuto(double);
+	//virtual ~MoveShooterAuto();
 };
 
-#endif /* SRC_COMMANDS_MOVESHOOTER_H_ */
+#endif /* SRC_COMMANDS_MOVESHOOTERAUTO_H_ */

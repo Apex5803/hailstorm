@@ -12,7 +12,8 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-class TenBallAuto {
+
+class TenBallAuto: public CommandGroup {
 public:
 	TenBallAuto();
 

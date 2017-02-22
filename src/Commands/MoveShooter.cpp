@@ -11,6 +11,7 @@ MoveShooter::MoveShooter() {
 	// TODO Auto-generated constructor stub
 	//Requires(Robot::shooter.get());
 	//Requires(Robot::talonShooter.get());
+	TalonSetPoint = 0;
 }
 
 void MoveShooter::Initialize(){
@@ -19,8 +20,10 @@ void MoveShooter::Initialize(){
 
 void MoveShooter::Execute(){
 	//Robot::shooter->ShootManual();
-	Robot::talonShooter->SetRPM(12000);
+	Robot::talonShooter->SetRPM(TalonSetPoint);
+
 }
+
 
 bool MoveShooter::IsFinished(){
 	return false;
@@ -28,7 +31,14 @@ bool MoveShooter::IsFinished(){
 
 void MoveShooter::End(){
 	//Robot::shooter->Off();
-	Robot::talonShooter->SetRPM(0);
+
+	TalonSetPoint = 0.0;
+	Robot::talonShooter->SetRPM(0.0);
+}
+
+
+void MoveShooter::SetSetPoint(double setPoint){
+	TalonSetPoint = setPoint;
 }
 
 void MoveShooter::Interrupted(){
