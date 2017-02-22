@@ -21,14 +21,32 @@ void MoveGearer::Initialize(){
 void MoveGearer::Execute(){
 	printf("MoveGearer executing \n");
 
-	if(!isAuto && Robot::oi->getXBoxController()->GetBumper(GenericHID::kLeftHand)){
+	/*if(!isAuto && Robot::oi->getXBoxController()->GetBumper(GenericHID::kLeftHand)){
 			Robot::gearer->In();
 			Robot::gearer->Extend();
 			printf("left bumper pressed \n");
 			//Robot::gearer->UnSecure();
+	}*/
+
+	if(Robot::oi->getXBoxController()->GetBumper(GenericHID::kLeftHand))
+	{
+		Robot::gearer->In();
+		Robot::gearer->Extend();
 	}
 
-	if(!isAuto && Robot::oi->getXBoxController()->GetTriggerAxis(GenericHID::kLeftHand) >=.75){
+	else if(Robot::oi->getXBoxController()->GetTriggerAxis(GenericHID::kLeftHand) >=.75)
+	{
+		Robot::gearer->Out();
+		Robot::gearer->Extend();
+	}
+
+	else
+	{
+		Robot::gearer->Off();
+		Robot::gearer->Retract();
+	}
+
+	/*if(!isAuto && Robot::oi->getXBoxController()->GetTriggerAxis(GenericHID::kLeftHand) >=.75){
 		Robot::gearer->Out();
 		Robot::gearer->Extend();
 		printf("left trigger pressed \n");
@@ -38,7 +56,7 @@ void MoveGearer::Execute(){
 	{
 		Robot::gearer->Out();
 		Robot::gearer->Extend();
-	}
+	}*/
 
 }
 

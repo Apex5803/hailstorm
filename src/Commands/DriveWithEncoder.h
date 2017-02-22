@@ -11,6 +11,7 @@
 #include "../Robot.h"
 #include "WPILib.h"
 
+
 class DriveWithEncoder: public Command {
 public:
 	DriveWithEncoder(bool isAuto);

@@ -10,13 +10,15 @@
 #include "WPILib.h"
 #include <Joystick.h>
 
-class JoystickAxis: public Joystick {
+class JoystickAxis: public Button {
 public:
-	JoystickAxis();
-	~JoystickAxis();
-	void Set();
-	void GetAxis();
+	JoystickAxis(GenericHID* joystick, int axisNumber);
+	virtual ~JoystickAxis() = default;
+	virtual bool Get();
+
 private:
+	GenericHID*m_joystick;
+	int m_axisNumber;
 
 };
 
