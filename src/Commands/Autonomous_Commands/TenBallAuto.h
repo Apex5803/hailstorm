@@ -10,7 +10,7 @@
 #include "WPILib.h"
 #include "Commands/CommandGroup.h"
 #include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "../../Robot.h"
 
 
 class TenBallAuto: public CommandGroup {

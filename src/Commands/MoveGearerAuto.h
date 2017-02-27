@@ -13,7 +13,7 @@
 
 class MoveGearerAuto: public Command {
 public:
-
+	MoveGearerAuto();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -15,7 +15,7 @@ UserSettings::UserSettings() {
 }
 
 double UserSettings::GetUserShooterSpeed(){
-	return Preferences::GetInstance()->GetDouble("Shooter Speed", 1000.0);
+	return Preferences::GetInstance()->GetDouble("Shooter Speed", 1200.0);
 }
 
 double UserSettings::GetUserDriveSpeed(){

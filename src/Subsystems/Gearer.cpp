@@ -47,12 +47,14 @@ void Gearer::InitDefaultCommand() {
 void Gearer::Extend(){
    gearSolenoid1->Set(DoubleSolenoid::Value::kForward);
    //gearSolenoid2->Set(DoubleSolenoid::Value::kForward);
-
+printf("Extender Gearer Solenoid");
 }
 
 void Gearer::Retract(){
 	 gearSolenoid1->Set(DoubleSolenoid::Value::kReverse);
 	 //gearSolenoid2->Set(DoubleSolenoid::Value::kReverse);
+	 printf("Retracted Gear Solenoid");
+
 }
 
 void Gearer::Off(){

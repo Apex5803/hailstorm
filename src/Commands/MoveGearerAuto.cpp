@@ -8,15 +8,18 @@
 #include <Commands/MoveGearerAuto.h>
 #include <stdio.h>
 
-
+MoveGearerAuto::MoveGearerAuto(): Command() {
+	Requires(Robot::gearer.get());
+}
 
 void MoveGearerAuto::Initialize(){
 
 }
 
 void MoveGearerAuto::Execute(){
-	Robot::gearer->Out();
 	Robot::gearer->Extend();
+	Robot::gearer->Out();
+
 }
 bool MoveGearerAuto::IsFinished(){
 	return false;

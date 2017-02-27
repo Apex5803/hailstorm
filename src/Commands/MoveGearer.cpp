@@ -19,7 +19,7 @@ void MoveGearer::Initialize(){
 }
 
 void MoveGearer::Execute(){
-	printf("MoveGearer executing \n");
+	//printf("MoveGearer executing \n");
 
 	/*if(!isAuto && Robot::oi->getXBoxController()->GetBumper(GenericHID::kLeftHand)){
 			Robot::gearer->In();

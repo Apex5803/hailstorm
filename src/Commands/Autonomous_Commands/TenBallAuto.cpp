@@ -5,18 +5,20 @@
  *      Author: first
  */
 
-#include <Commands/TenBallAuto.h>
+#include <Commands/Autonomous_Commands/TenBallAuto.h>
 #include <RobotMap.h>
 #include <Commands/MoveShooterAuto.h>
 #include <Commands/MoveMagiKarpetIn.h>
 #include <Commands/FeederIn.h>
 #include <Custom/UserSettings.h>
+#include <stdio.h>
 
 TenBallAuto::TenBallAuto() {
 	// TODO Auto-generated constructor stub
  UserSettings settings;
 
-AddSequential(new MoveShooterAuto(settings.GetUserDriveSpeed()), 2);
+std::cout << "Shooter Setpoint:" << settings.GetUserShooterSpeed() << "\n";
+AddSequential(new MoveShooterAuto(settings.GetUserShooterSpeed()), 2);
 AddParallel(new MoveMagiKarpetIn(), 6);
 AddParallel(new FeederIn(), 6);
 
