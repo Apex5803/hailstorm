@@ -47,7 +47,7 @@ void Robot::RobotInit() {
 
 
 
-    		printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX");
+    		printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
 
     //initialize vision setpoint variables
 //    rawArea = rawX = rawY = 0;
