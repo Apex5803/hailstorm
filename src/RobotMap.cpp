@@ -32,7 +32,7 @@ std::shared_ptr<DigitalInput> RobotMap::gearergearDetect;
 std::shared_ptr<SpeedController> RobotMap::gearergearRoller;
 std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSolenoid1;
 //std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSolenoid2;
-//std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSecurer;
+std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSecurer;
 std::shared_ptr<SpeedController> RobotMap::ballCollectorintakeRoller;
 std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid1;
 std::shared_ptr<DoubleSolenoid> RobotMap::ballCollectorcollectorSolenoid2;
@@ -88,6 +88,9 @@ void RobotMap::init() {
     
     gearergearSolenoid1.reset(new DoubleSolenoid(GEAR_SOLENOID_1_FORWARD_CHANNEL, GEAR_SOLENOID_1_REVERSE_CHANNEL));
     lw->AddActuator("Gearer", "gearSolenoid1", gearergearSolenoid1);
+
+    gearergearSecurer.reset(new DoubleSolenoid(GEAR_SECURE_SOLENOID_FORWARD_CHANNEL, GEAR_SECURE_SOLENOID_REVERSE_CHANNEL));
+    lw->AddActuator("Gearer", "gearSecurer", gearergearSecurer);
     
     //gearergearSolenoid2.reset(new DoubleSolenoid(GEAR_SOLENOID_2_FORWARD_CHANNEL, GEAR_SOLENOID_1_REVERSE_CHANNEL));
     //lw->AddActuator("Gearer", "gearSolenoid2", gearergearSolenoid2);
