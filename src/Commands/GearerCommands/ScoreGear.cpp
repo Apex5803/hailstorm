@@ -12,6 +12,7 @@
 #include <chrono>
 ScoreGear::ScoreGear() {
 	// TODO Auto-generated constructor stub
+	Requires(Robot::gearer.get());
 
 	// Initialize start time on construction
      m_start = std::chrono::system_clock::now();
@@ -23,7 +24,7 @@ void ScoreGear::Initialize(){
 }
 
 void ScoreGear::Execute(){
-
+/*
     if (m_waiting == false)
     {
 
@@ -43,6 +44,9 @@ void ScoreGear::Execute(){
 		Robot::gearer->Out();
     }
 }
+*/
+	Robot::gearer->Extend();
+	Robot::gearer->Out();
 
 
 }

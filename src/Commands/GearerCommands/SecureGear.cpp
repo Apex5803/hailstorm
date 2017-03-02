@@ -9,6 +9,7 @@
 
 SecureGear::SecureGear() {
 	// TODO Auto-generated constructor stub
+	Requires(Robot::gearer.get());
 
 }
 void SecureGear::Initialize(){
