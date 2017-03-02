@@ -16,6 +16,7 @@ void CollectGear::Initialize(){
 
 }
 void CollectGear::Execute(){
+	Robot::gearer->UnSecure();
 	Robot::gearer->Extend();
 	Robot::gearer->In();
 }
