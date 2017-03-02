@@ -11,8 +11,8 @@
 
 //<<<<<<< HEAD:src/Commands/Autonomous_Commands/OneGearAuto.cpp
 #include <Commands/Autonomous_Commands/OneGearAuto.h>
+#include <Commands/GearerCommands/MoveGearerAuto.h>
 #include "../TankDrive.h"
-#include "../MoveGearerAuto.h"
 //#include "AutonomousCommand.h"
 //#include <../Vision/VisionProcessing.h>
 //#include <../Vision/VisionDataResult.h>

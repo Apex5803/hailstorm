@@ -59,6 +59,12 @@ public:
 
 	//releases gear from securing piston
 	void UnSecure();
+
+	// Tells us if the gearer has been secured
+	bool GetIsSecured() const;
+
+private:
+	bool m_isSecured;
 };
 
 #endif

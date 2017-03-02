@@ -5,12 +5,13 @@
  *      Author: first
  */
 
-#ifndef SRC_COMMANDS_UNSECUREGEAR_H_
-#define SRC_COMMANDS_UNSECUREGEAR_H_
+#ifndef SRC_COMMANDS_GEARERCOMMANDS_UNSECUREGEAR_H_
+#define SRC_COMMANDS_GEARERCOMMANDS_UNSECUREGEAR_H_
 #include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "../../Robot.h"
 #include "WPILib.h"
 
+/* This command secures the gear on execute.*/
 class UnsecureGear: public Command {
 public:
 	UnsecureGear();
@@ -21,4 +22,4 @@ public:
 	virtual void Interrupted();
 };
 
-#endif /* SRC_COMMANDS_UNSECUREGEAR_H_ */
+#endif /* SRC_COMMANDS_GEARERCOMMANDS_UNSECUREGEAR_H_ */

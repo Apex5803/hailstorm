@@ -5,7 +5,7 @@
  *      Author: first
  */
 
-#include <Commands/UnsecureGear.h>
+#include <Commands/GearerCommands/UnsecureGear.h>
 
 UnsecureGear::UnsecureGear() {
 	// TODO Auto-generated constructor stub
@@ -22,7 +22,6 @@ bool UnsecureGear::IsFinished(){
 	return false;
 }
 void UnsecureGear::End(){
-	Robot::gearer->Secure();
 
 }
 void UnsecureGear::Interrupted(){

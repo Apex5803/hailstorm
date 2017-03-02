@@ -5,7 +5,7 @@
  *      Author: first
  */
 
-#include <Commands/SecureGear.h>
+#include <Commands/GearerCommands/SecureGear.h>
 
 SecureGear::SecureGear() {
 	// TODO Auto-generated constructor stub
@@ -21,7 +21,6 @@ bool SecureGear::IsFinished(){
 	return false;
 }
 void SecureGear::End(){
-	Robot::gearer->UnSecure();
 
 }
 void SecureGear::Interrupted(){

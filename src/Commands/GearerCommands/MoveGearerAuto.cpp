@@ -5,7 +5,7 @@
  *      Author: first
  */
 
-#include <Commands/MoveGearerAuto.h>
+#include <Commands/GearerCommands/MoveGearerAuto.h>
 #include <stdio.h>
 
 MoveGearerAuto::MoveGearerAuto(): Command() {
