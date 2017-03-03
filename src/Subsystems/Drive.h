@@ -87,17 +87,17 @@ public:
 	/**
 	 * The number of encoder ticks per rotation
 	 */
-	const int TICKS_PER_ROTATION = 1000;
+	const int TICKS_PER_ROTATION = 256;
 
 	/**
 	 * The size of your wheels (in inches)
 	 */
-	const float WHEEL_DIAMETER = 3.75;
+	const float WHEEL_DIAMETER = 3.5;
 
 	/**
 	 * This is the width of your robot (in inches)
 	 */
-	const float BASE_WIDTH = 18;
+	const float BASE_WIDTH = 26;
 
 
 	/*

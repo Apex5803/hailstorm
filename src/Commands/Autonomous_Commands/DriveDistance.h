@@ -11,7 +11,7 @@ private:
 	 * This is the P term in our PID
 	 * For the love of god and all that is holy, keep this small. *Eric glares seriously*
 	 */
-	const float KP = .08;
+	const float KP = .008;
 
 	/**
 	 * This value will be the weight we add to a side that is going too fast/slow.
@@ -30,8 +30,10 @@ private:
 
 	/**
 	 * This is our endpoint to see how far we need to go
+	 * Note: we need two so the robot can also drive backwards
 	 */
-	int m_ticks_to_target;
+	int m_right_target;
+	int m_left_target;
 
 	/**
 	 * These values are the extra compensations that we add outside of the PID so that we ensure that we are actually driving straight
