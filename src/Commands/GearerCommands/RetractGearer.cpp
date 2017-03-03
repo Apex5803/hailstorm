@@ -9,7 +9,7 @@
 
 RetractGearer::RetractGearer() {
 	// TODO Auto-generated constructor stub
-
+	Requires(Robot::gearer.get());
 }
 
 void RetractGearer::Initialize(){

@@ -9,7 +9,7 @@
 
 CollectGear::CollectGear() {
 	// TODO Auto-generated constructor stub
-
+	Requires(Robot::gearer.get());
 }
 
 void CollectGear::Initialize(){
