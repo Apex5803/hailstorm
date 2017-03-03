@@ -8,14 +8,17 @@
 
 
 
-Drive::Drive() : Subsystem("Drive") {
+Drive::Drive() : Subsystem("Drive")
+{
 
-    //dBaseEncoderL = RobotMap::driveTraindBaseEncoderL;
-    //dBaseEncoderR = RobotMap::driveTraindBaseEncoderR;
+	m_right_encoder = RobotMap::driveTraindBaseEncoderR;
+	m_left_encoder = RobotMap::driveTraindBaseEncoderL;
     dBaseL1 = RobotMap::driveTraindBaseL1;
     dBaseL2 = RobotMap::driveTraindBaseL2;
     dBaseR1 = RobotMap::driveTraindBaseR1;
     dBaseR2 = RobotMap::driveTraindBaseR2;
+    // You should probably add gyro for course correction, but I am going to be mega lazy and just use the encoders
+    // If we were only using one encoder, you would be forced to use the gyro, but thanks for allowing my laziness!
     //dBaseGyro = RobotMap::driveTraindBaseGyro;
 
 
@@ -75,6 +78,27 @@ void Drive::MyDrive(Joystick * leftStick, Joystick * rightStick)
 
 	drive->TankDrive(leftStick->GetY(),rightStick->GetY());
 
+}
+
+int Drive::GetRightEncoder()
+{
+	return m_right_encoder->Get();
+}
+
+int Drive::GetLeftEncoder()
+{
+	return m_left_encoder->Get();
+}
+
+void Drive::ResetEncoders()
+{
+	m_left_encoder->Reset();
+	m_right_encoder->Reset();
+}
+
+void Drive::Stop()
+{
+	drive->TankDrive(0., 0.);
 }
 
 

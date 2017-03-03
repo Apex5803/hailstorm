@@ -68,6 +68,10 @@ private:
 	 */
 	std::shared_ptr<SpeedController> dBaseR2;
 
+	std::shared_ptr<Encoder> m_right_encoder;
+
+	std::shared_ptr<Encoder> m_left_encoder;
+
 
 
 	/*
@@ -79,6 +83,22 @@ private:
 	RobotDrive * drive;
 
 public:
+
+	/**
+	 * The number of encoder ticks per rotation
+	 */
+	const int TICKS_PER_ROTATION = 1000;
+
+	/**
+	 * The size of your wheels (in inches)
+	 */
+	const float WHEEL_DIAMETER = 3.75;
+
+	/**
+	 * This is the width of your robot (in inches)
+	 */
+	const float BASE_WIDTH = 18;
+
 
 	/*
 
@@ -131,6 +151,16 @@ public:
 	 */
 
 	void MyDrive(Joystick *, Joystick *);
+
+	/**
+	 * Stops the robot
+	 */
+	void Stop();
+
+	int GetRightEncoder();
+	int GetLeftEncoder();
+
+	void ResetEncoders();
 
 };
 
