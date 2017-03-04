@@ -52,6 +52,7 @@ void Robot::RobotInit() {
     tenBallAutoPin.reset(new DigitalInput(AUTO_TEN_B_PIN));
     encoderGearAutoPin.reset(new DigitalInput(AUTO_EN_G_PIN));
     driveForwardAutoDeadReckoningPin.reset(new DigitalInput(AUTO_DRVIE_FORWARD_PIN));
+  //  driveForwardEncoderPin.reset(new DigitalInput(AUTO_DRIVE_FORWARD_ENC_PIN));
 
 
     //initialize vision setpoint variables
@@ -97,6 +98,10 @@ void Robot::DisabledInit(){
 	else if(!encoderGearAutoPin->Get())
 	{
 		autonomousCommand = new EncoderGearAuto();
+	}
+	else if(!driveForwardAutoDeadReckoningPin->Get())
+	{
+		autonomousCommand = new DriveForwardAutoDeadReckoning();
 	}
 	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
 }

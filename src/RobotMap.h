@@ -76,6 +76,7 @@ const int AUTO_EN_G_PIN = 1;
 const int AUTO_ONE_G_PIN = 2;
 const int AUTO_TEN_B_PIN = 3;
 const int AUTO_DRVIE_FORWARD_PIN = 4;
+const int AUTO_DRIVE_FORWARD_ENC_PIN = 5;
 
 
 //Intake Roller Current Limit

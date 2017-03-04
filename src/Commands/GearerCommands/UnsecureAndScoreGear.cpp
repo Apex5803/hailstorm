@@ -9,7 +9,7 @@
 
 UnsecureAndScoreGear::UnsecureAndScoreGear() {
 	// TODO Auto-generated constructor stub
-	AddSequential(new UnsecureGear(), 1);
+	AddSequential(new UnsecureGear(), .1);
 	AddSequential(new ScoreGear());
 }
 
