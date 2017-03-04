@@ -82,8 +82,8 @@ void Robot::DisabledPeriodic() {
 }
 
 void Robot::AutonomousInit() {
-	if (autonomousCommand.get() != nullptr){
 	if (autonomousCommand.get() != nullptr)
+	{
 		autonomousCommand->Start();
 	}
 }
@@ -91,8 +91,8 @@ void Robot::AutonomousInit() {
 void Robot::AutonomousPeriodic() {
 
 	//commented out this code, let's use the new functions
-	/* Scheduler::GetInstance()->Run();
-	auto grip = NetworkTable::GetTable("myContoursTable");
+	Scheduler::GetInstance()->Run();
+	/*auto grip = NetworkTable::GetTable("myContoursTable");
 	auto xs = grip->GetNumberArray("targets/areas", llvm::ArrayRef<double>());
 	for (auto x : xs){
 		std::cout << "Got contour with x-" << x << std::endl;
@@ -120,9 +120,9 @@ void Robot::TeleopInit() {
 	// continue until interrupted by another command, remove
 	// these lines or comment it out.
 	if (autonomousCommand.get() != nullptr)
+	{
 		autonomousCommand->Cancel();
-
-
+	}
 }
 
 void Robot::TeleopPeriodic() {
