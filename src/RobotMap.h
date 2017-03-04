@@ -71,6 +71,10 @@ const int S_ENCODER_B_PRIMARY = 6;
 const int S_ENCODER_A_BOOSTER = 7;
 const int S_ENCODER_B_BOOSTER = 8;
 
+// autos
+const int AUTO_EN_G_PIN = 1;
+const int AUTO_ONE_G_PIN = 2;
+const int AUTO_TEN_B_PIN = 3;
 
 
 
