@@ -86,7 +86,48 @@ void Robot::DisabledInit(){
 	{
 		delete autonomousCommand;
 	}
+	if (!oneGearAutoPin->Get())
+	{
+		autonomousCommand = new OneGearAuto();
+		printf("Selected OneGear Auto /n");
+	}
+	else if(!tenBallAutoPin->Get())
+	{
+		autonomousCommand = new TenBallAuto();
+		printf("Selected 10 Ball Auto /n");
+	}
+	else if(!encoderGearAutoPin->Get())
+	{
+		autonomousCommand = new EncoderGearAuto();
+		printf("Selected Encoder Gear Auto /n");
+	}
+	else if(!driveForwardAutoDeadReckoningPin->Get())
+	{
+		autonomousCommand = new DriveForwardAutoDeadReckoning();
+		printf("Selected Drive Forward DR /n");
+	}
+	if(autonomousCommand == nullptr)
+	{
+		printf("No Auto Selected /n");
+	}
 
+	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
+}
+
+void Robot::DisabledPeriodic() {
+	Scheduler::GetInstance()->Run();
+}
+
+void Robot::AutonomousInit() {
+
+	/*if (autonomousCommand != nullptr)
+	{
+		autonomousCommand->Start();
+	}
+	if (autonomousCommand != nullptr)
+	{
+		delete autonomousCommand;
+	}
 	if (!oneGearAutoPin->Get())
 	{
 		autonomousCommand = new OneGearAuto();
@@ -103,19 +144,7 @@ void Robot::DisabledInit(){
 	{
 		autonomousCommand = new DriveForwardAutoDeadReckoning();
 	}
-	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
-}
-
-void Robot::DisabledPeriodic() {
-	Scheduler::GetInstance()->Run();
-}
-
-void Robot::AutonomousInit() {
-
-	if (autonomousCommand != nullptr)
-	{
-		autonomousCommand->Start();
-	}
+	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");*/
 }
 
 void Robot::AutonomousPeriodic() {

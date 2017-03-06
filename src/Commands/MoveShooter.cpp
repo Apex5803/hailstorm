@@ -19,7 +19,7 @@ void MoveShooter::Initialize(){
 }
 
 void MoveShooter::Execute(){
-	//Robot::shooter->ShootManual();
+	//::talonShooter->ShootManual();
 	//Robot::talonShooter->SetRPM(TalonSetPoint);
 	Robot::talonShooter->SetRPM(12000);
 }
@@ -30,10 +30,10 @@ bool MoveShooter::IsFinished(){
 }
 
 void MoveShooter::End(){
-	//Robot::shooter->Off();
+	Robot::talonShooter->Off();
 
-	TalonSetPoint = 0.0;
-	Robot::talonShooter->SetRPM(0.0);
+	//TalonSetPoint = 0.0;
+	//Robot::talonShooter->SetRPM(0.0);
 }
 
 

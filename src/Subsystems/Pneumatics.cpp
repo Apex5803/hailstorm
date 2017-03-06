@@ -17,13 +17,8 @@ void Pneumatics::InitDefaultCommand(){
 
 
 
+}
 
-
-
-
-
-
-
-
-
+void Off(){
+	RobotMap::compressor->Stop();
 }
