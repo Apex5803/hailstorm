@@ -7,10 +7,11 @@
 
 #include <Subsystems/TalonShooter.h>
 #include "../RobotMap.h"
-#include "SmartDashboard/SmartDashboard.h"
 #include "LiveWindow/LiveWindow.h"
 #include "CANTalon.h"
 #include "llvm/StringRef.h"
+#include "WPILib.h"
+#include "SmartDashboard/SmartDashboard.h"
 
 TalonShooter::TalonShooter() {
 	// TODO Auto-generated constructor stub
@@ -68,7 +69,8 @@ void TalonShooter::SetRPM(double rpm){
 	std::cout << "I: "<< shooterWheelBooster->GetI();
 	std::cout << "D: "<< shooterWheelBooster->GetD();
 	std::cout << "F: "<< shooterWheelBooster->GetF() << "\n";
-	//SmartDashboard::PutNumber("RPM", shooterWheelBooster->GetSpeed());
+	SmartDashboard::PutNumber("RPM", shooterWheelBooster->GetSpeed());
+    //lw->AddSensor("RPM", "Shooter", shooterWheelBooster->GetSpeed());
 
 }
 

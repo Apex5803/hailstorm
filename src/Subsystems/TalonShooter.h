@@ -9,9 +9,8 @@
 #define SRC_SUBSYSTEMS_TALONSHOOTER_H_
 
 #include "Commands/Subsystem.h"
-#include "wpilib.h"
+#include "WPILib.h"
 #include "CANTalon.h"
-
 
 class TalonShooter {
 public:
