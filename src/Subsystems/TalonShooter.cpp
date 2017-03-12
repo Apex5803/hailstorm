@@ -13,7 +13,7 @@
 #include "WPILib.h"
 #include "SmartDashboard/SmartDashboard.h"
 
-TalonShooter::TalonShooter() {
+TalonShooter::TalonShooter():Subsystem("TalonShooter"){
 	// TODO Auto-generated constructor stub
     shooterWheelPrimary = RobotMap::shootershooterWheelPrimary;
     shooterWheelBooster = RobotMap::shootershooterWheelBooster;
@@ -37,8 +37,8 @@ TalonShooter::TalonShooter() {
     shooterWheelPrimary->ConfigNominalOutputVoltage(+0., -0.);
     shooterWheelBooster->ConfigNominalOutputVoltage(+0., -0.);
 
-    shooterWheelPrimary->ConfigPeakOutputVoltage(+12., -12.);
-    shooterWheelBooster->ConfigPeakOutputVoltage(+12., -12.);
+    shooterWheelPrimary->ConfigPeakOutputVoltage(+9., -9.);
+    shooterWheelBooster->ConfigPeakOutputVoltage(+9., -9.);
 
     shooterWheelPrimary->SetAllowableClosedLoopErr(0);
     shooterWheelBooster->SetAllowableClosedLoopErr(0);
@@ -69,7 +69,10 @@ void TalonShooter::SetRPM(double rpm){
 	std::cout << "I: "<< shooterWheelBooster->GetI();
 	std::cout << "D: "<< shooterWheelBooster->GetD();
 	std::cout << "F: "<< shooterWheelBooster->GetF() << "\n";
+	std::cout << "Follower speed: " << shooterWheelPrimary->GetSpeed() << "\n";
 	SmartDashboard::PutNumber("RPM", shooterWheelBooster->GetSpeed());
+	SmartDashboard::PutNumber("Setpoint", shooterWheelBooster->GetSetpoint());
+	SmartDashboard::PutNumber("Error", shooterWheelBooster->GetClosedLoopError());
     //lw->AddSensor("RPM", "Shooter", shooterWheelBooster->GetSpeed());
 
 }
@@ -80,6 +83,5 @@ void TalonShooter::ShootManual(){
 }
 
 void TalonShooter::Off(){
-	shooterWheelPrimary->Set(0.0);
 	shooterWheelBooster->Set(0.0);
 }

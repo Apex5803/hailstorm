@@ -12,7 +12,7 @@
 #include "WPILib.h"
 #include "CANTalon.h"
 
-class TalonShooter {
+class TalonShooter: public Subsystem {
 public:
 
 	std::shared_ptr<CANTalon> shooterWheelPrimary;

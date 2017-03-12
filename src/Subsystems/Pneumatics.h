@@ -22,7 +22,8 @@ public:
 
 	// Initializes the default command for the compressor
 	void InitDefaultCommand();
-	void Off();
+	void Stop();
+	void Start();
 };
 
 #endif /* SRC_SUBSYSTEMS_PNEUMATICS_H_ */

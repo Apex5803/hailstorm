@@ -19,6 +19,10 @@ void Pneumatics::InitDefaultCommand(){
 
 }
 
-void Off(){
-	RobotMap::compressor->Stop();
+void Pneumatics::Stop(){
+	compressor->Stop();
+}
+
+void Pneumatics::Start(){
+	compressor->Start();
 }

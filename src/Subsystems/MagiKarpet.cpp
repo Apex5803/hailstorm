@@ -37,11 +37,11 @@ void MagiKarpet::InitDefaultCommand() {
 }
 
 void MagiKarpet::In(){
-	beltMotor->Set(.5);
+	beltMotor->Set(.3);
 }
 
 void MagiKarpet::Out(){
-	beltMotor->Set(-.5);
+	beltMotor->Set(-.3);
 }
 
 void MagiKarpet::Off(){
