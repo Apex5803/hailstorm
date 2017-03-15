@@ -58,9 +58,7 @@ void BallCollector::In(){
 	intakeRoller->Set(-1.);
 }
 
-void BallCollector::Climb(){
-	intakeRoller->Set(-1.);
-}
+
 
 void BallCollector::MotorOff(){
 	intakeRoller->Set(0);

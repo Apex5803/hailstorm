@@ -37,8 +37,8 @@ TalonShooter::TalonShooter():Subsystem("TalonShooter"){
     shooterWheelPrimary->ConfigNominalOutputVoltage(+0., -0.);
     shooterWheelBooster->ConfigNominalOutputVoltage(+0., -0.);
 
-    shooterWheelPrimary->ConfigPeakOutputVoltage(+9., -9.);
-    shooterWheelBooster->ConfigPeakOutputVoltage(+9., -9.);
+    shooterWheelPrimary->ConfigPeakOutputVoltage(+0., -9.);
+    shooterWheelBooster->ConfigPeakOutputVoltage(+0., -9.);
 
     shooterWheelPrimary->SetAllowableClosedLoopErr(0);
     shooterWheelBooster->SetAllowableClosedLoopErr(0);

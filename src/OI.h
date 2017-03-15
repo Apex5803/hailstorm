@@ -25,7 +25,7 @@ private:
 	std::shared_ptr<JoystickButton> ballCollectorForward;
 	std::shared_ptr<JoystickButton> magikarpetButton;
 	std::shared_ptr<JoystickButton> feederButton;
-	std::shared_ptr<JoystickButton> shooterButton;\
+	std::shared_ptr<JoystickButton> shooterButton;
 	std::shared_ptr<JoystickButton> feederreverseButton;
 	std::shared_ptr<JoystickButton> magikarpetreverseButton;
 	std::shared_ptr<JoystickButton> climbButton;

@@ -10,7 +10,7 @@
 
 Climb::Climb() : Command() {
 	// TODO Auto-generated constructor stub
-	Requires(Robot::ballCollector.get());
+	Requires(Robot::climber.get());
 	Requires(Robot::pneumatics.get());
 }
 
@@ -21,18 +21,8 @@ void Climb::Initialize()
 
 void Climb::Execute()
 {
-	if(Robot::oi->getXBoxController()->GetYButton()
-				//&& Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
-				) {
-			Robot::ballCollector->Climb();
-			Robot::ballCollector->Down();
-		}
-	/*
-		else
-		{
-			Robot::ballCollector->MotorOff();
-		}
-		*/
+	//TODO:  Consider adding current limiting later, Robot::pdp->GetCurrent(INTAKE_ROLLER) < INTAKE_ROLLER_CURRENT_LIMIT
+	Robot::climber->ClimbUp();
 	RobotMap::compressor->Stop();
 }
 
@@ -43,7 +33,7 @@ bool Climb::IsFinished()
 
 void Climb::End()
 {
-	Robot::ballCollector->MotorOff();
+	Robot::climber->StopClimbing();
 	RobotMap::compressor->Start();
 }
 

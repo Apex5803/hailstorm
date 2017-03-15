@@ -25,6 +25,7 @@ std::shared_ptr<PowerDistributionPanel> Robot::pdp;
 std::shared_ptr<Drive> Robot::drive;
 std::shared_ptr<TalonShooter> Robot::talonShooter;
 std::shared_ptr<Pneumatics> Robot::pneumatics;
+std::shared_ptr<Climber> Robot::climber;
 
 std::shared_ptr<DigitalInput> Robot::oneGearAutoPin;
 std::shared_ptr<DigitalInput> Robot::tenBallAutoPin;
@@ -46,6 +47,7 @@ void Robot::RobotInit() {
     drive.reset(new Drive());
     talonShooter.reset(new TalonShooter());
     pneumatics.reset(new Pneumatics());
+    climber.reset (new Climber());
 
     // auto things
     oneGearAutoPin.reset(new DigitalInput(AUTO_ONE_G_PIN));
