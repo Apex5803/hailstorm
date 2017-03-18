@@ -13,7 +13,7 @@
 #include <Commands/FeederOut.h>
 #include <Custom/UserSettings.h>
 #include <stdio.h>
-#include <Commands/MoveBallCollector.h>
+#include <Commands/MoveIntakeIn.h>
 #include <Commands/TankDrive.h>
 
 TenBallAuto::TenBallAuto() {
@@ -27,11 +27,11 @@ AddSequential (new FeederOut(), 1);
 printf ("Feeder reversed       /n");
 AddParallel(new MoveMagiKarpetIn(), 7);
 printf ("MagiKarpet moved in      /n");
-AddParallel (new MoveBallCollector(), 7);
+AddParallel (new MoveIntakeIn(), 7);
 printf ("BallCollector Moved     /n");
-AddParallel(new FeederIn(), 7);
+AddSequential(new FeederIn(), 7);
 printf ("Feeder ran in     /n");
-AddSequential (new TankDrive(-.8), 5.0);
+AddSequential (new TankDrive(-.6), 3.2);
 printf ("Drove Backwards     /n");
 
 }
