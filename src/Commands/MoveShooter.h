@@ -15,7 +15,7 @@ private:
 	double TalonSetPoint;
 
 public:
-	MoveShooter();
+	MoveShooter(double SetPoint);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -8,12 +8,12 @@
 #include <Commands/MoveShooter.h>
 #include <Custom/UserSettings.h>
 
-MoveShooter::MoveShooter() {
+MoveShooter::MoveShooter(double SetPoint) {
 	// TODO Auto-generated constructor stub
 	//Requires(Robot::shooter.get());
 	Requires(Robot::talonShooter.get());
 	Requires(Robot::pneumatics.get());
-	TalonSetPoint = 0;
+	TalonSetPoint = SetPoint;
 }
 
 void MoveShooter::Initialize(){
@@ -22,8 +22,8 @@ void MoveShooter::Initialize(){
 
 void MoveShooter::Execute(){
 	//::talonShooter->ShootManual();
-	//Robot::talonShooter->SetRPM(TalonSetPoint);
-	Robot::talonShooter->SetRPM(Preferences::GetInstance()->GetDouble("Shooter Speed", 9200.0));
+	Robot::talonShooter->SetRPM(TalonSetPoint);
+	//Robot::talonShooter->SetRPM(Preferences::GetInstance()->GetDouble("Shooter Speed", 9200.0));
 	//Robot::talonShooter->SetRPM(9500);
 	Robot::pneumatics->Stop();
 }

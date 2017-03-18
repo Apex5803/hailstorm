@@ -73,7 +73,7 @@ OI::OI() {
 	feederreverseButton->WhileHeld(new MoveFeeder());
 
 	shooterButton.reset(new JoystickButton(xBoxController.get(), 6));
-	shooterButton->WhileHeld(new MoveShooter());
+	shooterButton->WhileHeld(new MoveShooter(Preferences::GetInstance()->GetDouble("Shooter Speed", 9200.0)));
     
 	climbButton.reset(new JoystickButton(xBoxController.get(), 4));
 	climbButton->WhileHeld(new Climb());
