@@ -9,7 +9,7 @@
 
 FeederIn::FeederIn() {
 	// TODO Auto-generated constructor stub
-
+	 Requires(Robot::feeder.get());
 }
 
 void FeederIn::Initialize() {

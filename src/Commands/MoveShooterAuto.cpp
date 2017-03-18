@@ -10,6 +10,7 @@
 MoveShooterAuto::MoveShooterAuto(double newSP) {
 	// TODO Auto-generated constructor stub
 	TalonSetPoint = newSP;
+	Requires(Robot::talonShooter.get());
 }
 void MoveShooterAuto::Initialize(){
 

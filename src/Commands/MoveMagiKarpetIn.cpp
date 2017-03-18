@@ -9,7 +9,7 @@
 
 MoveMagiKarpetIn::MoveMagiKarpetIn() {
 	// TODO Auto-generated constructor stub
-
+	Requires(Robot::magiKarpet.get());
 }
 
 

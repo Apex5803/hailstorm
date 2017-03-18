@@ -22,10 +22,17 @@ TenBallAuto::TenBallAuto() {
 
 std::cout << "Shooter Setpoint:" << settings.GetUserShooterSpeed() << "\n";
 AddParallel(new MoveShooter(settings.GetUserShooterSpeed()), 10);
+printf ("Shooter started         /n");
 AddSequential (new FeederOut(), 1);
+printf ("Feeder reversed       /n");
 AddParallel(new MoveMagiKarpetIn(), 7);
+printf ("MagiKarpet moved in      /n");
 AddParallel (new MoveBallCollector(), 7);
+printf ("BallCollector Moved     /n");
 AddParallel(new FeederIn(), 7);
+printf ("Feeder ran in     /n");
 AddSequential (new TankDrive(-.8), 5.0);
+printf ("Drove Backwards     /n");
+
 }
 

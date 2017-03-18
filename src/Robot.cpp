@@ -122,31 +122,11 @@ void Robot::DisabledPeriodic() {
 
 void Robot::AutonomousInit() {
 
-	/*if (autonomousCommand != nullptr)
+	if (autonomousCommand != nullptr)
 	{
 		autonomousCommand->Start();
 	}
-	if (autonomousCommand != nullptr)
-	{
-		delete autonomousCommand;
-	}
-	if (!oneGearAutoPin->Get())
-	{
-		autonomousCommand = new OneGearAuto();
-	}
-	else if(!tenBallAutoPin->Get())
-	{
-		autonomousCommand = new TenBallAuto();
-	}
-	else if(!encoderGearAutoPin->Get())
-	{
-		autonomousCommand = new EncoderGearAuto();
-	}
-	else if(!driveForwardAutoDeadReckoningPin->Get())
-	{
-		autonomousCommand = new DriveForwardAutoDeadReckoning();
-	}
-	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");*/
+
 }
 
 void Robot::AutonomousPeriodic() {
