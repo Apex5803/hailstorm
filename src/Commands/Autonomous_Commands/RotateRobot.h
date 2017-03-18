@@ -9,7 +9,7 @@ private:
 	/**
 	 * This is the multiplier to determine how hard we should be driving.
 	 * This is the P term in our PID
-	 * For the love of god and all that is holy, keep this small. *Eric glares seriously*
+	 * For the love of God and all that is holy, keep this small. *Eric glares seriously*
 	 */
 	const float KP = .08;
 

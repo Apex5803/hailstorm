@@ -23,7 +23,7 @@ void MoveShooter::Initialize(){
 void MoveShooter::Execute(){
 	//::talonShooter->ShootManual();
 	//Robot::talonShooter->SetRPM(TalonSetPoint);
-	Robot::talonShooter->SetRPM(Preferences::GetInstance()->GetDouble("Shooter Speed", 1200.0));
+	Robot::talonShooter->SetRPM(Preferences::GetInstance()->GetDouble("Shooter Speed", 9200.0));
 	//Robot::talonShooter->SetRPM(9500);
 	Robot::pneumatics->Stop();
 }
