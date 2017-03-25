@@ -89,7 +89,7 @@ void Robot::DisabledInit(){
 	{
 		delete autonomousCommand;
 	}
-	/*if (!oneGearAutoPin->Get())
+	if (!oneGearAutoPin->Get())
 	{
 		autonomousCommand = new OneGearAuto();
 		//printf("Selected OneGear Auto /n");
@@ -116,18 +116,18 @@ void Robot::DisabledInit(){
 		selectedAutonomous = "Selected Drive Forward with Encoders auto";
 	}
 	else if(!reverseTenBallAutoPin->Get())
-	{*/
-		autonomousCommand = new TenBallAuto();
-		selectedAutonomous = "Selected Ten Ball /n";
-		printf("Use for Red Side /n");
-	/*}
+	{
+		autonomousCommand = new ReverseTenBallAuto();
+		selectedAutonomous = "Selected Reverse Ten Ball /n";
+		printf("Use for Blue Side /n");
+	}
 
 	if(autonomousCommand == nullptr)
 	{
 		selectedAutonomous = "No Auto Selected /n";
 	}
 
-	*/printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
+	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
 }
 
 void Robot::DisabledPeriodic() {
@@ -147,7 +147,7 @@ void Robot::AutonomousPeriodic() {
 
 	//commented out this code, let's use the new functions
 	Scheduler::GetInstance()->Run();
-	if (autonomousCommand != nullptr)
+	/*if (autonomousCommand != nullptr)
 		{
 		std::cout << "Selected Auto: " << autonomousCommand->GetName();
 		std::cout << "\n";
@@ -156,7 +156,10 @@ void Robot::AutonomousPeriodic() {
 	{
 	std::cout << "No Auto Selected:";
 	std::cout << "\n";
-	}
+	}*/
+	std::cout << selectedAutonomous;
+
+
 	/*auto grip = NetworkTable::GetTable("myContoursTable");
 	auto xs = grip->GetNumberArray("targets/areas", llvm::ArrayRef<double>());
 	for (auto x : xs){
