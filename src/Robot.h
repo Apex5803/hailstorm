@@ -47,6 +47,7 @@ private:
 	static std::shared_ptr<DigitalInput> driveForwardAutoDeadReckoningPin;
 	static std::shared_ptr<DigitalInput> driveForwardEncoderPin;
 	static std::shared_ptr<DigitalInput> reverseTenBallAutoPin;
+	std::string selectedAutonomous;
 public:
 	Command * autonomousCommand;
 	static std::unique_ptr<OI> oi;

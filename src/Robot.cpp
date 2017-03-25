@@ -56,7 +56,7 @@ void Robot::RobotInit() {
     driveForwardAutoDeadReckoningPin.reset(new DigitalInput(AUTO_DRVIE_FORWARD_PIN));
     reverseTenBallAutoPin.reset(new DigitalInput(AUTO_R_TEN_B_PIN));
     driveForwardEncoderPin.reset(new DigitalInput(AUTO_DRIVE_FORWARD_ENC_PIN));
-
+    selectedAutonomous = "int";
 
     //initialize vision setpoint variables
 //    rawArea = rawX = rawY = 0;
@@ -89,44 +89,45 @@ void Robot::DisabledInit(){
 	{
 		delete autonomousCommand;
 	}
-	if (!oneGearAutoPin->Get())
+	/*if (!oneGearAutoPin->Get())
 	{
 		autonomousCommand = new OneGearAuto();
-		printf("Selected OneGear Auto /n");
+		//printf("Selected OneGear Auto /n");
+		selectedAutonomous = "Selected OneGear Auto /n";
 	}
 	else if(!tenBallAutoPin->Get())
 	{
 		autonomousCommand = new TenBallAuto();
-		printf("Selected 10 Ball Auto /n");
+		selectedAutonomous = "Selected 10 Ball Auto /n";
 	}
 	else if(!encoderGearAutoPin->Get())
 	{
 		autonomousCommand = new EncoderGearAuto();
-		printf("Selected Encoder Gear Auto /n");
+		selectedAutonomous = "Selected Encoder Gear Auto /n";
 	}
 	else if(!driveForwardAutoDeadReckoningPin->Get())
 	{
 		autonomousCommand = new DriveForwardAutoDeadReckoning();
-		printf("Selected Drive Forward DR /n");
+		selectedAutonomous = "Selected Drive Forward DR /n";
 	}
 	else if(!driveForwardEncoderPin->Get())
 	{
 		autonomousCommand = new DriveForwardEncoders();
-		printf("Selected Drive Forward with Encoders auto");
+		selectedAutonomous = "Selected Drive Forward with Encoders auto";
 	}
 	else if(!reverseTenBallAutoPin->Get())
-	{
-		autonomousCommand = new ReverseTenBallAuto();
-		printf("Selected Reverse Ten Ball /n");
-		printf("Use for Blue Side /n");
-	}
+	{*/
+		autonomousCommand = new TenBallAuto();
+		selectedAutonomous = "Selected Ten Ball /n";
+		printf("Use for Red Side /n");
+	/*}
 
 	if(autonomousCommand == nullptr)
 	{
-		printf("No Auto Selected /n");
+		selectedAutonomous = "No Auto Selected /n";
 	}
 
-	printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
+	*/printf("BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX \n");
 }
 
 void Robot::DisabledPeriodic() {
@@ -146,6 +147,16 @@ void Robot::AutonomousPeriodic() {
 
 	//commented out this code, let's use the new functions
 	Scheduler::GetInstance()->Run();
+	if (autonomousCommand != nullptr)
+		{
+		std::cout << "Selected Auto: " << autonomousCommand->GetName();
+		std::cout << "\n";
+		}
+	else
+	{
+	std::cout << "No Auto Selected:";
+	std::cout << "\n";
+	}
 	/*auto grip = NetworkTable::GetTable("myContoursTable");
 	auto xs = grip->GetNumberArray("targets/areas", llvm::ArrayRef<double>());
 	for (auto x : xs){
@@ -182,6 +193,17 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 	Scheduler::GetInstance()->Run();
 	lw->Run();
+	/*if (autonomousCommand != nullptr)
+			{
+			std::cout << "Selected Auto:" << autonomousCommand->g;
+			std::cout << "\n";
+			}
+		else
+		{
+		std::cout << "No Auto Selected:";
+		std::cout << "\n";
+		}*/
+	std::cout << selectedAutonomous;
 }
 
 void Robot::TestPeriodic() {
