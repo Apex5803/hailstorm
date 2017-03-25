@@ -118,8 +118,8 @@ void Robot::DisabledInit(){
 	else if(!reverseTenBallAutoPin->Get())
 	{*/
 		autonomousCommand = new TenBallAuto();
-		selectedAutonomous = "Selected Ten Ball /n";
-		printf("Use for Red Side /n");
+		selectedAutonomous = "Selected Ten or Reverse Ten Ball /n";
+		printf("Use for Red or Blue Side, depending on the match /n");
 	/*}
 
 	if(autonomousCommand == nullptr)
