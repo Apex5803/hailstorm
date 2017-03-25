@@ -1,5 +1,6 @@
 #include "DriveDistance.h"
 #include "Robot.h"
+#include "SmartDashboard/SmartDashboard.h"
 
 DriveDistance::DriveDistance(float distance, float max_speed) {
 	// Use Requires() here to declare subsystem dependencies
@@ -67,6 +68,8 @@ void DriveDistance::Execute()
 		m_right_sag = right_speed < 0 ? SAG_AGGRESSIVENESS - m_right_sag : SAG_AGGRESSIVENESS + m_right_sag;
 	}
 
+	SmartDashboard::PutNumber("lspeed", left_speed);
+	SmartDashboard::PutNumber("rspeed", right_speed);
 	Robot::drive->MyDrive(left_speed + m_left_sag, right_speed + m_right_sag);
 }
 

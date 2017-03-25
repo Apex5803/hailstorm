@@ -12,14 +12,25 @@ TankDrive::TankDrive(): Command("TankDrive") {
 	//Requires(Robot::driveTrain.get());
 	Requires(Robot::drive.get());
 	isAutonomous = false;
-	this->speed = 0.;
+	this->lspeed = 0.;
+	this->rspeed = 0.;
 }
 
 TankDrive::TankDrive(double speed) : Command("TankDrive"){
 	//Requires(Robot::driveTrain.get());
 	Requires(Robot::drive.get());
 	isAutonomous = true;
-	this->speed = speed;
+	this->lspeed = speed;
+	this->rspeed = speed;
+}
+
+TankDrive::TankDrive(double lspeed, double rspeed) : Command("TankDrive"){
+	//Requires(Robot::driveTrain.get());
+	Requires(Robot::drive.get());
+	isAutonomous = true;
+	this->lspeed = lspeed;
+	this->rspeed = rspeed;
+
 }
 
 void TankDrive::Initialize(){
@@ -36,7 +47,7 @@ void TankDrive::Execute(){
 	else
 	{
 //		Robot::driveTrain->MyDrive(speed, -speed);
-		Robot::drive->MyDrive(speed, -speed);
+		Robot::drive->MyDrive(lspeed, -rspeed);
 	}
 }
 

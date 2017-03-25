@@ -10,7 +10,7 @@
 DriveForwardAutoDeadReckoning::DriveForwardAutoDeadReckoning() {
 	// TODO Auto-generated constructor stub
 	AddSequential(new TankDrive(-.5), 3.5);
-	printf("Drove in direction of gearer n/ ");
+	printf("Drove in direction of gearer dead reckoning n/ ");
 
 	AddSequential(new TankDrive(0.0), 2.0);
 	printf("Guaranteed Stop");

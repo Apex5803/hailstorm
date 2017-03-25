@@ -19,6 +19,8 @@ public:
 	//running this command will start robot driving  at provided speed
 	TankDrive(double);
 
+
+	TankDrive(double, double);
 	//method calls to run once this command runs
 	virtual void Initialize();
 
@@ -41,7 +43,9 @@ private:
 	bool isAutonomous;
 
 	//initial speed that robot will move in auto mode
-	float speed;
+
+	float lspeed;
+	float rspeed;
 };
 
 #endif /* SRC_COMMANDS_TANKDRIVE_H_ */
