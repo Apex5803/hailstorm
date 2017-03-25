@@ -89,7 +89,7 @@ void Robot::DisabledInit(){
 	{
 		delete autonomousCommand;
 	}
-	if (!oneGearAutoPin->Get())
+	if (oneGearAutoPin->Get())
 	{
 		autonomousCommand = new OneGearAuto();
 		//printf("Selected OneGear Auto /n");
@@ -100,7 +100,7 @@ void Robot::DisabledInit(){
 		autonomousCommand = new TenBallAuto();
 		selectedAutonomous = "Selected 10 Ball Auto /n";
 	}
-	else if(!encoderGearAutoPin->Get())
+	else if(encoderGearAutoPin->Get())
 	{
 		autonomousCommand = new EncoderGearAuto();
 		selectedAutonomous = "Selected Encoder Gear Auto /n";
