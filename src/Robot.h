@@ -41,12 +41,14 @@
 class Robot : public IterativeRobot {
 
 private:
-	static std::shared_ptr<DigitalInput> oneGearAutoPin;
-	static std::shared_ptr<DigitalInput> tenBallAutoPin;
-	static std::shared_ptr<DigitalInput> encoderGearAutoPin;
-	static std::shared_ptr<DigitalInput> driveForwardAutoDeadReckoningPin;
-	static std::shared_ptr<DigitalInput> driveForwardEncoderPin;
-	static std::shared_ptr<DigitalInput> reverseTenBallAutoPin;
+	DigitalInput * oneGearAutoPin;
+	DigitalInput * tenBallAutoPin;
+	DigitalInput * encoderGearAutoPin;
+	DigitalInput * driveForwardAutoDeadReckoningPin;
+	DigitalInput * driveForwardEncoderPin;
+	DigitalInput * reverseTenBallAutoPin;
+
+	DigitalInput* testInput = new DigitalInput(5);
 	std::string selectedAutonomous;
 public:
 	Command * autonomousCommand;
