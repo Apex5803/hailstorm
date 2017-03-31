@@ -24,7 +24,7 @@ ReverseTenBallAuto::ReverseTenBallAuto() {
 std::cout << "Shooter Setpoint:" << settings.GetUserShooterSpeed() << "\n";
 AddParallel(new MoveShooter(8950.), 10);
 printf ("Shooter started         /n ");
-AddSequential (new FeederOut(), 1);
+AddSequential (new FeederOut(), 0.5);
 printf ("Feeder reversed       /n" );
 AddParallel(new MoveMagiKarpetIn(), 7);
 printf ("MagiKarpet moved in      /n ");
