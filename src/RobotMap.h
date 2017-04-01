@@ -74,15 +74,6 @@ const int S_ENCODER_B_BOOSTER = 8;
 //climber
 const int C_MOTOR = 9;
 
-// autos
-const int AUTO_EN_G_PIN = 1;
-const int AUTO_ONE_G_PIN = 0;
-const int AUTO_TEN_B_PIN = 2;
-const int AUTO_DRVIE_FORWARD_PIN = 4;
-const int AUTO_DRIVE_FORWARD_ENC_PIN = 9;
-const int AUTO_R_TEN_B_PIN = 3;
-
-
 //Intake Roller Current Limit
 const double INTAKE_ROLLER_CURRENT_LIMIT = 50.0;
 
