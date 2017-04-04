@@ -11,17 +11,17 @@ private:
 	 * This is the P term in our PID
 	 * For the love of god and all that is holy, keep this small. *Eric glares seriously*
 	 */
-	const float KP = .008;
+	const float KP = .001;
 
 	/**
 	 * This value will be the weight we add to a side that is going too fast/slow.
 	 */
-	const float SAG_AGGRESSIVENESS = .005;
+	const float SAG_AGGRESSIVENESS = .001;
 
 	/**
 	 * This value is how close you want to get to your end goal before giving up
 	 */
-	const int ERROR_TICKS = 10;
+	const int ERROR_TICKS = 40;
 
 	/**
 	 * A number between 0 and .9 for the speed of the bot

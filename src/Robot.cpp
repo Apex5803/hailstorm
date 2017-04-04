@@ -98,7 +98,12 @@ void Robot::DisabledInit(){
 		autonomousCommand = new ReverseTenBallAuto();
 		selectedAutonomous = "Selected Blue Alliance Ten Ball Auto";
 	}
-
+	else
+	{
+		//use drive forward encoders auto for default
+		autonomousCommand = new DriveForwardEncoders();
+		selectedAutonomous = "Selected Drive Forward with Encoders Auto";
+	}
 	if(autonomousCommand == nullptr)
 	{
 		selectedAutonomous = "No Auto Selected";

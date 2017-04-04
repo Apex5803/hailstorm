@@ -53,10 +53,12 @@ void RobotMap::init() {
     lw->AddSensor("DriveTrain", "dBaseEncoderL", driveTraindBaseEncoderL);
     driveTraindBaseEncoderL->SetDistancePerPulse(1.0);
     driveTraindBaseEncoderL->SetPIDSourceType(PIDSourceType::kRate);
+    driveTraindBaseEncoderL->SetReverseDirection(true);
     driveTraindBaseEncoderR.reset(new Encoder(CHANNEL_A_RIGHT_BASE_ENCODER, CHANNEL_B_RIGHT_BASE_ENCODER, false, Encoder::k4X));
     lw->AddSensor("DriveTrain", "dBaseEncoderR", driveTraindBaseEncoderR);
     driveTraindBaseEncoderR->SetDistancePerPulse(1.0);
     driveTraindBaseEncoderR->SetPIDSourceType(PIDSourceType::kRate);
+    //driveTraindBaseEncoderR->SetReverseDirection(true);
 
 
     driveTraindBaseL1.reset(new VictorSP(DRIVE_SPEED_LEFT_1));

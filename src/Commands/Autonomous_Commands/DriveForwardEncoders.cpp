@@ -7,14 +7,13 @@
 
 #include <Commands/Autonomous_Commands/DriveForwardEncoders.h>
 #include "Commands/Autonomous_Commands/DriveDistance.h"
+#include "Commands/TankDrive.h"
 
 DriveForwardEncoders::DriveForwardEncoders() {
 	// TODO Auto-generated constructor stub
-	AddSequential(new DriveDistance(-50., .5), 7);
-	printf("Drove in direction of gear n/ ");
+	AddSequential(new DriveDistance(-100., .5), 7);
 
-	AddSequential(new DriveDistance(0., 0.), 2);
-	printf("Guaranteed Stop");
+	AddSequential(new TankDrive(0., 0.), 2);
 }
 
 DriveForwardEncoders::~DriveForwardEncoders() {

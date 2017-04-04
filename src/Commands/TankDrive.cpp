@@ -34,10 +34,13 @@ TankDrive::TankDrive(double lspeed, double rspeed) : Command("TankDrive"){
 }
 
 void TankDrive::Initialize(){
-
+	Robot::drive->ResetEncoders();
 }
 
 void TankDrive::Execute(){
+	float right_encoder_value = Robot::drive->GetRightEncoder();
+	float left_encoder_value = Robot::drive->GetLeftEncoder();
+
 	if (!isAutonomous)
 	{
 //		Robot::driveTrain->MyDrive(-Robot::oi->getJoystickL()->GetRawAxis(1), Robot::oi->getJoystickR()->GetRawAxis(1));
@@ -49,6 +52,8 @@ void TankDrive::Execute(){
 //		Robot::driveTrain->MyDrive(speed, -speed);
 		Robot::drive->MyDrive(lspeed, -rspeed);
 	}
+	SmartDashboard::PutNumber("left encoder ticks", left_encoder_value);
+	SmartDashboard::PutNumber("right encoder ticks", right_encoder_value);
 }
 
 bool TankDrive::IsFinished(){

@@ -26,6 +26,8 @@ DriveDistance::DriveDistance(float distance, float max_speed) {
 		m_right_target = -ticks_to_target;
 		m_left_target = ticks_to_target;
 	}
+	std::cout << "right target" << m_right_target << std::endl;
+	std::cout << "left target" << m_left_target << std::endl;
 }
 
 // Called just before this Command runs the first time
@@ -65,19 +67,41 @@ void DriveDistance::Execute()
 
 	if (left_encoder_value > right_encoder_value)
 	{
-		m_right_sag = right_speed < 0 ? SAG_AGGRESSIVENESS - m_right_sag : SAG_AGGRESSIVENESS + m_right_sag;
+		m_right_sag = right_speed < 0 ?  SAG_AGGRESSIVENESS - m_right_sag : SAG_AGGRESSIVENESS + m_right_sag;
 	}
 
 	SmartDashboard::PutNumber("lspeed", left_speed);
 	SmartDashboard::PutNumber("rspeed", right_speed);
+	SmartDashboard::PutNumber("left encoder counts", left_encoder_value);
+	SmartDashboard::PutNumber("right encoder counts", right_encoder_value);
+	SmartDashboard::PutNumber("right SAG", m_right_sag);
+	SmartDashboard::PutNumber("left SAG", m_left_sag);
 	Robot::drive->MyDrive(left_speed + m_left_sag, right_speed + m_right_sag);
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool DriveDistance::IsFinished()
 {
-	return abs(Robot::drive->GetLeftEncoder() - m_left_target) <= ERROR_TICKS &&
-			abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS;
+	bool left_result = abs(Robot::drive->GetLeftEncoder() - m_left_target) <= ERROR_TICKS;
+	float left_error = (Robot::drive->GetLeftEncoder() - m_left_target);
+
+	bool right_result =	abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS;
+	float right_error = abs(Robot::drive->GetRightEncoder() - m_right_target);
+
+
+	if(left_result == true)
+	{
+		std::cout << "hit left target" << std::endl;
+	}
+	if(right_result == true)
+	{
+		std::cout << "hit right target" << std::endl;
+	}
+
+	SmartDashboard::PutNumber("left error", left_error);
+	SmartDashboard::PutNumber("right error", right_error);
+
+	return left_result == true && right_result == true;
 }
 
 // Called once after isFinished returns true
