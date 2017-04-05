@@ -1,9 +1,7 @@
+#include <cmath>
+
 #include "Drive.h"
-
 #include "../RobotMap.h"
-
-
-
 #include "../Commands/TankDrive.h"
 
 
@@ -85,9 +83,35 @@ int Drive::GetRightEncoder()
 	return m_right_encoder->Get();
 }
 
+double Drive::GetRightEncoderSpeed()
+{
+	auto result = m_right_encoder->GetRate();
+	if (isnan(result) || isinf(result))
+	{
+		// API says that this is a "feature" where no speed means that it could return either inf or NaN.
+		printf("Right encoder speed is %f", 0.);
+		return 0.0;
+	}
+
+	printf("Right encoder speed is %f", result);
+	return result;
+}
+
 int Drive::GetLeftEncoder()
 {
 	return m_left_encoder->Get();
+}
+
+double Drive::GetLeftEncoderSpeed()
+{
+	auto result = m_left_encoder->GetRate();
+	if (isnan(result) || isinf(result))
+	{
+		// API says that this is a "feature" where no speed means that it could return either inf or NaN.
+		return 0.0;
+	}
+
+	return result;
 }
 
 void Drive::ResetEncoders()

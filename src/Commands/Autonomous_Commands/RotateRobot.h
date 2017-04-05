@@ -19,6 +19,11 @@ private:
 	const int ERROR_TICKS = 10;
 
 	/**
+	 * This value is how close you want to get to your end goal before giving up
+	 */
+	const double MAX_STOPPING_VELOCITY = 5.;
+
+	/**
 	 * This is the distance that the two wheels need to go
 	 * we need two of them because one is going to be a negative distance
 	 */

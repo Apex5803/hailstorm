@@ -68,8 +68,14 @@ private:
 	 */
 	std::shared_ptr<SpeedController> dBaseR2;
 
+	/*
+	 * The encoder object located on the right side of the bot
+	 */
 	std::shared_ptr<Encoder> m_right_encoder;
 
+	/*
+	 * The encoder object located on the right side of the bot
+	 */
 	std::shared_ptr<Encoder> m_left_encoder;
 
 
@@ -157,9 +163,33 @@ public:
 	 */
 	void Stop();
 
+	/*
+	 * Gets the value of the right side encoder
+	 * @return the ticks on the encoder
+	 */
 	int GetRightEncoder();
+
+	/*
+	 * This method will get the apparent speed of the encoder in ticks/s per the documentation
+	 * @remark This checks for nan and will return 0 when the encoder isn't moving because ¯\_(-.-)_/¯
+	 */
+	double GetRightEncoderSpeed();
+
+	/*
+	 * This method will get the apparent speed of the encoder in ticks/s per the documentation
+	 * @remark This checks for nan and will return 0 when the encoder isn't moving because ¯\_(-.-)_/¯
+	 */
+	double GetLeftEncoderSpeed();
+
+	/*
+	 * Gets the value of the left side encoder
+	 * @return the ticks on the encoder
+	 */
 	int GetLeftEncoder();
 
+	/*
+	 * Resets the counts on all of the encoders to 0
+	 */
 	void ResetEncoders();
 
 };

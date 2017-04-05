@@ -66,7 +66,9 @@ void RotateRobot::Execute()
 bool RotateRobot::IsFinished()
 {
 	return abs(Robot::drive->GetLeftEncoder() - m_left_target) <= ERROR_TICKS &&
-				abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS;
+				abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS &&
+				abs(Robot::drive->GetRightEncoderSpeed()) <= MAX_STOPPING_VELOCITY &&
+				abs(Robot::drive->GetLeftEncoderSpeed()) <= MAX_STOPPING_VELOCITY;
 }
 
 // Called once after isFinished returns true

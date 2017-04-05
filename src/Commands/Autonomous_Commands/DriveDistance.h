@@ -23,6 +23,11 @@ private:
 	 */
 	const int ERROR_TICKS = 10;
 
+	/*
+	 * This value is a constant to see how slow we need to go before we can stop. Units are in ticks/sec
+	 */
+	const double MAX_STOPPING_VELOCITY = 5.;
+
 	/**
 	 * A number between 0 and .9 for the speed of the bot
 	 */

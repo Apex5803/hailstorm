@@ -58,14 +58,18 @@ void DriveDistance::Execute()
 	// See if there is any side that is going too fast and slow it down a bit
 	// NOTE: I am only doing the right side because we want the robot to not perpetually slow down
 	// Note: Directionality matters if we are going backwards!
-	if (right_encoder_value > left_encoder_value)
+	if (abs(right_encoder_value) > abs(left_encoder_value))
 	{
-		m_right_sag = right_speed < 0 ? SAG_AGGRESSIVENESS + m_right_sag : SAG_AGGRESSIVENESS - m_right_sag;
+		m_right_sag = right_speed < 0 ?
+				SAG_AGGRESSIVENESS + m_right_sag :
+				SAG_AGGRESSIVENESS - m_right_sag;
 	}
 
-	if (left_encoder_value > right_encoder_value)
+	if (abs(left_encoder_value) > abs(right_encoder_value))
 	{
-		m_right_sag = right_speed < 0 ? SAG_AGGRESSIVENESS - m_right_sag : SAG_AGGRESSIVENESS + m_right_sag;
+		m_right_sag = right_speed < 0 ?
+				SAG_AGGRESSIVENESS - m_right_sag :
+				SAG_AGGRESSIVENESS + m_right_sag;
 	}
 
 	SmartDashboard::PutNumber("lspeed", left_speed);
@@ -77,7 +81,9 @@ void DriveDistance::Execute()
 bool DriveDistance::IsFinished()
 {
 	return abs(Robot::drive->GetLeftEncoder() - m_left_target) <= ERROR_TICKS &&
-			abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS;
+			abs(Robot::drive->GetRightEncoder() - m_right_target) <= ERROR_TICKS &&
+			abs(Robot::drive->GetRightEncoderSpeed()) <= MAX_STOPPING_VELOCITY &&
+			abs(Robot::drive->GetLeftEncoderSpeed()) <= MAX_STOPPING_VELOCITY;
 }
 
 // Called once after isFinished returns true

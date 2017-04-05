@@ -12,9 +12,6 @@ DriveForwardEncoders::DriveForwardEncoders() {
 	// TODO Auto-generated constructor stub
 	AddSequential(new DriveDistance(-50., .5), 7);
 	printf("Drove in direction of gear n/ ");
-
-	AddSequential(new DriveDistance(0., 0.), 2);
-	printf("Guaranteed Stop");
 }
 
 DriveForwardEncoders::~DriveForwardEncoders() {
