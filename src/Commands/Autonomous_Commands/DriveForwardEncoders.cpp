@@ -10,7 +10,7 @@
 
 DriveForwardEncoders::DriveForwardEncoders() {
 	// TODO Auto-generated constructor stub
-	AddSequential(new DriveDistance(-50., .5), 7);
+	AddSequential(new DriveDistance(-93., .5), 7);
 	printf("Drove in direction of gear n/ ");
 }
 
