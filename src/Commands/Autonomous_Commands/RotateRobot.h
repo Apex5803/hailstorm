@@ -11,12 +11,12 @@ private:
 	 * This is the P term in our PID
 	 * For the love of God and all that is holy, keep this small. *Eric glares seriously*
 	 */
-	const float KP = .08;
+	const float KP = .008;
 
 	/**
 	 * This value is how close you want to get to your end goal before giving up
 	 */
-	const int ERROR_TICKS = 10;
+	const int ERROR_TICKS = 40;
 
 	/**
 	 * This value is how close you want to get to your end goal before giving up

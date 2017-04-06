@@ -84,6 +84,7 @@ bool RotateRobot::IsFinished()
 void RotateRobot::End()
 {
 	Robot::drive->Stop();
+	std::cout << "End" << " \n";
 }
 
 // Called when another command which requires one or more of the same
@@ -91,4 +92,5 @@ void RotateRobot::End()
 void RotateRobot::Interrupted()
 {
 	Robot::drive->Stop();
+	std::cout << "Interrupted. Why? We don't know" << " \n";
 }

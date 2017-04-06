@@ -8,7 +8,6 @@
 
 Drive::Drive() : Subsystem("Drive")
 {
-
 	m_right_encoder = RobotMap::driveTraindBaseEncoderR;
 	m_left_encoder = RobotMap::driveTraindBaseEncoderL;
     dBaseL1 = RobotMap::driveTraindBaseL1;
@@ -36,8 +35,6 @@ Drive::Drive() : Subsystem("Drive")
 		    dBaseR1,
 
 		    dBaseR2);
-
-
 
 
 	drive->SetSafetyEnabled(false);
