@@ -11,20 +11,24 @@ RotateRobot::RotateRobot(float degrees, float max_speed)
 	// This equation is 2 * pi * radius * (degrees / 360)
 	// radius is half of the wheelbase of the robot
 	auto target_distance = 2 * (22. / 7) * (Robot::drive->BASE_WIDTH / 2.) * (degrees / 360.);
+	auto ticks_to_target = (target_distance / (Robot::drive->WHEEL_DIAMETER * (22. / 7))) * Robot::drive->TICKS_PER_ROTATION;
 	if (degrees < 0)
 	{
 		// turn left
-		m_left_target = target_distance;
-		m_right_target = target_distance;
+		m_left_target = ticks_to_target;
+		m_right_target = ticks_to_target;
 	}
 	else
 	{
 		//turn right
-		m_right_target = -target_distance;
-		m_left_target = -target_distance;
+		m_right_target = -ticks_to_target;
+		m_left_target = -ticks_to_target;
 	}
 
 	m_max_speed = max_speed;
+
+	SmartDashboard::PutNumber("left target", m_left_target);
+	SmartDashboard::PutNumber("right target", m_right_target);
 }
 
 // Called just before this Command runs the first time
@@ -60,6 +64,11 @@ void RotateRobot::Execute()
 	// You could add sag here, but I am way too lazy to add that right now.
 
 	Robot::drive->MyDrive(left_speed, right_speed);
+
+	SmartDashboard::PutNumber("right encoder", right_encoder_value);
+	SmartDashboard::PutNumber("left encoder", left_encoder_value);
+	SmartDashboard::PutNumber("right speed rr", right_speed);
+	SmartDashboard::PutNumber("left speed rr", left_speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
