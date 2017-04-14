@@ -10,6 +10,6 @@
 AutoTurnTest::AutoTurnTest() {
 	// TODO Auto-generated constructor stub
 	printf ("turned 90 degrees /n ");
-	AddSequential (new TurnGyro(90, .5));
+	AddSequential (new TurnGyro(90, .5), 10);
 }
 

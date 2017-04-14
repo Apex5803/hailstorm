@@ -44,6 +44,10 @@ void Robot::RobotInit() {
     pneumatics.reset(new Pneumatics());
     climber.reset (new Climber());
 
+    CameraServer::GetInstance()->StartAutomaticCapture();
+    std::cout << "Yaw" << drive->GetYaw();
+    SmartDashboard::PutNumber("Analog Gyro", drive->GetYaw());
+
     //initialize vision setpoint variables
 //    rawArea = rawX = rawY = 0;
 
@@ -179,6 +183,7 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 	Scheduler::GetInstance()->Run();
 	lw->Run();
+	std::cout << "Yaw" << drive->GetYaw();
 	/*std::cout << "\n encoder gear auto pin" << encoderGearAutoPin->Get() << "\n";
 	std::cout << "one gear auto" << oneGearAutoPin->Get() << "\n";
 	std::cout << "ten ball auto" << tenBallAutoPin->Get() << "\n";

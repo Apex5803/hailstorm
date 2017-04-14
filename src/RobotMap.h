@@ -29,7 +29,7 @@ const int CHANNEL_A_LEFT_BASE_ENCODER = 13;
 const int CHANNEL_B_LEFT_BASE_ENCODER = 12;
 const int CHANNEL_A_RIGHT_BASE_ENCODER = 10;
 const int CHANNEL_B_RIGHT_BASE_ENCODER = 11;
-const int DRIVE_GYRO = 4;
+const int DRIVE_GYRO = 1;
 
 // drive base speed controllers
 const int DRIVE_SPEED_LEFT_1 = 2;

@@ -45,6 +45,9 @@ void TurnGyro::Execute()
 	SmartDashboard::PutNumber("Right speed calculated", right_speed);
 
 	Robot::drive->MyDrive(left_speed, right_speed);
+
+	std::cout << "Ran the gyro";
+	printf("Gyro did a thing (couldn't think of anything else to add here)");
 }
 
 bool TurnGyro::IsFinished()
