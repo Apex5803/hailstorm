@@ -73,7 +73,7 @@ private:
 	std::shared_ptr<Encoder> m_left_encoder;
 
 
-
+	std::shared_ptr<AnalogGyro> m_gyro;
 	/*
 
 	 * This is the physical pointer that will run the robot drive.
@@ -159,6 +159,7 @@ public:
 
 	int GetRightEncoder();
 	int GetLeftEncoder();
+	float GetYaw();
 
 	void ResetEncoders();
 

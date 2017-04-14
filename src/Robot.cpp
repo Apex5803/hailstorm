@@ -98,6 +98,11 @@ void Robot::DisabledInit(){
 		autonomousCommand = new ReverseTenBallAuto();
 		selectedAutonomous = "Selected Blue Alliance Ten Ball Auto";
 	}
+	else if(!autoTurnTestPin->Get())
+	{
+		autonomousCommand = new AutoTurnTest();
+		selectedAutonomous = "Selected Turn Test Auto";
+	}
 
 	if(autonomousCommand == nullptr)
 	{

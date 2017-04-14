@@ -17,6 +17,7 @@ Drive::Drive() : Subsystem("Drive")
     dBaseL2 = RobotMap::driveTraindBaseL2;
     dBaseR1 = RobotMap::driveTraindBaseR1;
     dBaseR2 = RobotMap::driveTraindBaseR2;
+    m_gyro = RobotMap::driveTraindBaseGyro;
     // You should probably add gyro for course correction, but I am going to be mega lazy and just use the encoders
     // If we were only using one encoder, you would be forced to use the gyro, but thanks for allowing my laziness!
     //dBaseGyro = RobotMap::driveTraindBaseGyro;
@@ -88,6 +89,11 @@ int Drive::GetRightEncoder()
 int Drive::GetLeftEncoder()
 {
 	return m_left_encoder->Get();
+}
+
+float Drive::GetYaw()
+{
+	return m_gyro->GetAngle();
 }
 
 void Drive::ResetEncoders()
