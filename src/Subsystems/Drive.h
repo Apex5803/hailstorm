@@ -73,7 +73,7 @@ private:
 	std::shared_ptr<Encoder> m_left_encoder;
 
 
-	std::shared_ptr<AnalogGyro> m_gyro;
+	std::shared_ptr<ADXRS450_Gyro> m_gyro;
 	/*
 
 	 * This is the physical pointer that will run the robot drive.
@@ -157,11 +157,30 @@ public:
 	 */
 	void Stop();
 
+	/*
+	 * Gets the current right encoder value in ticks.
+	 */
 	int GetRightEncoder();
+
+	/*
+	 * Gets the current left encoder value in ticks.
+	 */
 	int GetLeftEncoder();
+
+	/*
+	 * Gets the current angle measured by the gyro.
+	 */
 	float GetYaw();
 
+	/*
+	 * Use this method to zero the encoders on the Robot.  ONLY USE WHEN YOU'RE SURE THE ROBOT IS AT REST!
+	 */
 	void ResetEncoders();
+
+	/*
+	 * Use this method to calibrate the gyro on the Robot.  ONLY USE WHEN YOU'RE SURE THE ROBOT IS AT REST!
+	 */
+	void CalibrateGyro();
 
 };
 

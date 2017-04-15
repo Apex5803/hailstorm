@@ -23,9 +23,10 @@ void TurnGyro::Initialize()
 void TurnGyro::Execute()
 {
 	float yaw = Robot::drive->GetYaw();
-	float yaw_error = (m_target_deg - m_initial_yaw) - yaw;
+	float yaw_error = (m_target_deg + m_initial_yaw) - yaw;
 
 	SmartDashboard::PutNumber("Yaw", yaw);
+	SmartDashboard::PutNumber("Yaw Error", yaw_error);
 
 	float left_speed = 0.;
 	float right_speed = 0.;
@@ -46,14 +47,14 @@ void TurnGyro::Execute()
 
 	Robot::drive->MyDrive(left_speed, right_speed);
 
-	std::cout << "Ran the gyro";
+	std::cout << "Yaw error: " << yaw_error;
 	printf("Gyro did a thing (couldn't think of anything else to add here)");
 }
 
 bool TurnGyro::IsFinished()
 {
 	float yaw = Robot::drive->GetYaw();
-	float yaw_error = (m_target_deg - m_initial_yaw) - yaw;
+	float yaw_error = (m_target_deg + m_initial_yaw) - yaw;
 	return abs(yaw_error) <= TOLERANCE_DEG;
 }
 

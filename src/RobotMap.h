@@ -29,7 +29,6 @@ const int CHANNEL_A_LEFT_BASE_ENCODER = 13;
 const int CHANNEL_B_LEFT_BASE_ENCODER = 12;
 const int CHANNEL_A_RIGHT_BASE_ENCODER = 10;
 const int CHANNEL_B_RIGHT_BASE_ENCODER = 11;
-const int DRIVE_GYRO = 1;
 
 // drive base speed controllers
 const int DRIVE_SPEED_LEFT_1 = 2;
@@ -89,7 +88,7 @@ public:
 	static std::shared_ptr<SpeedController> driveTraindBaseR1;
 	static std::shared_ptr<SpeedController> driveTraindBaseR2;
 
-	static std::shared_ptr<AnalogGyro> driveTraindBaseGyro;
+	static std::shared_ptr<ADXRS450_Gyro> driveTraindBaseGyro;
 	static std::shared_ptr<DigitalInput> gearergearDetect;
 	static std::shared_ptr<SpeedController> gearergearRoller;
 	static std::shared_ptr<DoubleSolenoid> gearergearSolenoid1;

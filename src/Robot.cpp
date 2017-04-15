@@ -46,7 +46,7 @@ void Robot::RobotInit() {
 
     CameraServer::GetInstance()->StartAutomaticCapture();
     std::cout << "Yaw" << drive->GetYaw();
-    SmartDashboard::PutNumber("Analog Gyro", drive->GetYaw());
+    SmartDashboard::PutNumber("Gyro", drive->GetYaw());
 
     //initialize vision setpoint variables
 //    rawArea = rawX = rawY = 0;
@@ -112,6 +112,8 @@ void Robot::DisabledInit(){
 	{
 		selectedAutonomous = "No Auto Selected";
 	}
+
+
 
 	std::cout << selectedAutonomous << std::endl;
 	std::cout << "BEGINNING HAILSTORM. GET TO COVER ASAP. GO APEX" << std::endl;

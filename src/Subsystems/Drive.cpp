@@ -102,6 +102,12 @@ void Drive::ResetEncoders()
 	m_right_encoder->Reset();
 }
 
+void Drive::CalibrateGyro()
+{
+	m_gyro->Calibrate();
+}
+
+
 void Drive::Stop()
 {
 	drive->TankDrive(0., 0.);

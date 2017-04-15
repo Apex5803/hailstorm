@@ -27,7 +27,7 @@ std::shared_ptr<SpeedController> RobotMap::driveTraindBaseL1;
 std::shared_ptr<SpeedController> RobotMap::driveTraindBaseL2;
 std::shared_ptr<SpeedController> RobotMap::driveTraindBaseR1;
 std::shared_ptr<SpeedController> RobotMap::driveTraindBaseR2;
-std::shared_ptr<AnalogGyro> RobotMap::driveTraindBaseGyro;
+std::shared_ptr<ADXRS450_Gyro> RobotMap::driveTraindBaseGyro;
 std::shared_ptr<SpeedController> RobotMap::gearergearRoller;
 std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSolenoid1;
 std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSecurer;
@@ -75,9 +75,9 @@ void RobotMap::init() {
     driveTraindBaseR2->SetInverted(false);
     lw->AddActuator("DriveTrain", "dBaseR2", std::static_pointer_cast<VictorSP>(driveTraindBaseR2));
 
-    driveTraindBaseGyro.reset(new AnalogGyro(DRIVE_GYRO));
+    driveTraindBaseGyro.reset(new ADXRS450_Gyro(SPI::Port::kOnboardCS2));
     lw->AddSensor("DriveTrain", "dBaseGyro", driveTraindBaseGyro);
-    driveTraindBaseGyro->SetSensitivity(0.007);
+    driveTraindBaseGyro->Calibrate(); // Calibrate the gyro while the robot is at rest
 
     //gearergearDetect.reset(new DigitalInput(GEAR_DETECTOR));
     //lw->AddSensor("Gearer", "gearDetect", gearergearDetect);
