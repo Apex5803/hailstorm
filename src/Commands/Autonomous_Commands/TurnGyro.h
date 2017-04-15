@@ -12,7 +12,6 @@
 #include "../../Robot.h"
 #include "WPILib.h"
 
-
 class TurnGyro: public Command {
 public:
 	TurnGyro(double degree, double base_speed);

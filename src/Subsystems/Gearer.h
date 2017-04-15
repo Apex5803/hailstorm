@@ -47,6 +47,8 @@ public:
 	//runs motor to collect gear
 	void In();
 
+	void ContinuousRollers();
+
 	//Expels gear from gearer
 	void Out();
 

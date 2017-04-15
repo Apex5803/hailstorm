@@ -51,6 +51,11 @@ void Gearer::In(){
 	gearRoller->Set(-1);
 }
 
+void Gearer::ContinuousRollers()
+{
+	//gearRoller->Set();
+}
+
 void Gearer::Out(){
 	gearRoller->Set(1);
 }
