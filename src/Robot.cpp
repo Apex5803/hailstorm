@@ -94,6 +94,10 @@ void Robot::DisabledInit(){
 		autonomousCommand = new DriveForwardAutoDeadReckoning();
 		selectedAutonomous = "Selected Drive Forward DR Auto";
 	}
+	else if(!gearAndBallsPin->Get()){
+		autonomousCommand = new GearandBalls();
+		selectedAutonomous = "Selected Gear and Balls auto";
+	}
 	else if(!driveForwardEncoderPin->Get())
 	{
 		autonomousCommand = new DriveForwardEncoders();
@@ -182,6 +186,7 @@ void Robot::TeleopInit() {
 	{
 		autonomousCommand->Cancel();
 	}
+
 }
 
 void Robot::TeleopPeriodic() {
