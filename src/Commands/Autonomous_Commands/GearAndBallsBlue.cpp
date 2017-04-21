@@ -5,19 +5,27 @@
  *      Author: Apex5803
  */
 
-#include <Commands/Autonomous_Commands/GearandBalls.h>
+#include <Commands/Autonomous_Commands/GearAndBallsBlue.h>
 
 
-GearandBalls::GearandBalls() {
+GearAndBallsBlue::GearAndBallsBlue() {
 	// TODO Auto-generated constructor stub
 	AddSequential(new TankDrive(-.6), 2);
+	//printf ("Drove toward gearer  /n");
 	AddSequential(new TankDrive(0), .2);
+	//printf("Stopped /n");
 	AddParallel(new MoveGearerAuto(), 1);
-	AddSequential(new TankDrive(.5), 1.3);
-	AddSequential(new TankDrive(.5, -.5), .3);
+	//printf ("placed gear /n");
+	AddSequential(new TankDrive(.5), .7);
+	//printf ("Moved toward intake /n");
+	AddSequential(new TankDrive(.75, -.75), .85);
+	//printf ("turned toward boiler");
 	AddSequential(new TankDrive(.6), 3);
-	AddSequential(new TankDrive(-0.6), 0.2);
+	//printf ("Drove toward boiler /n");
+	AddSequential(new TankDrive(-0.6), 0.25);
+	//printf ("backed up slightly from boiler /n");
 	AddSequential(new TankDrive(0), 0.2);
+	//printf ("stopped moving before shooting /n");
 
 	AddParallel(new MoveShooter(8950.), 7);
 	//printf ("Shooter started         /n ");
@@ -29,9 +37,7 @@ GearandBalls::GearandBalls() {
 	//printf ("BallCollector Moved     /n ");
 	AddSequential(new FeederIn(), 6.5);
 	//printf ("Feeder ran in     /n ");
-	//AddSequential (new TankDrive(-.4, -.8), 1.1);
-	//printf ("Drove Backwards     /n ");
-	//AddSequential (new TankDrive(-.5), 2.3);
+
 
 }
 

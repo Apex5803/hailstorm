@@ -94,9 +94,13 @@ void Robot::DisabledInit(){
 		autonomousCommand = new DriveForwardAutoDeadReckoning();
 		selectedAutonomous = "Selected Drive Forward DR Auto";
 	}
-	else if(!gearAndBallsPin->Get()){
-		autonomousCommand = new GearandBalls();
-		selectedAutonomous = "Selected Gear and Balls auto";
+	else if(!gearAndBallsBluePin->Get()){
+		autonomousCommand = new GearAndBallsBlue();
+		selectedAutonomous = "Selected Gear and Balls blue side auto";
+	}
+	else if (!gearAndBallsRedPin->Get()){
+		autonomousCommand =  new GearAndBallsRed();
+		selectedAutonomous = "Selected Gear and Balls red side auto";
 	}
 	else if(!driveForwardEncoderPin->Get())
 	{

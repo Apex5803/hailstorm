@@ -1,13 +1,12 @@
 /*
- * GearandBalls.h
+ * GearAndBallsRed.h
  *
- *  Created on: Apr 20, 2017
+ *  Created on: Apr 21, 2017
  *      Author: Apex5803
  */
 
-#ifndef SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLS_H_
-#define SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLS_H_
-
+#ifndef SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLSRED_H_
+#define SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLSRED_H_
 
 #include "Commands/Subsystem.h"
 #include "../../Robot.h"
@@ -21,15 +20,12 @@
 #include <Commands/FeederIn.h>
 #include <Commands/FeederOut.h>
 
-class GearandBalls : public CommandGroup {
+class GearAndBallsRed : public CommandGroup {
 public:
-	GearandBalls();
-
+	GearAndBallsRed();
 
 
 private:
-
-
 };
 
-#endif /* SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLS_H_ */
+#endif /* SRC_COMMANDS_AUTONOMOUS_COMMANDS_GEARANDBALLSRED_H_ */
