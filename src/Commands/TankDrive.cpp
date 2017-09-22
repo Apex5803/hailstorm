@@ -42,7 +42,7 @@ void TankDrive::Execute(){
 	{
 //		Robot::driveTrain->MyDrive(-Robot::oi->getJoystickL()->GetRawAxis(1), Robot::oi->getJoystickR()->GetRawAxis(1));
 
-		Robot::drive->MyDrive(-Robot::oi->getJoystickL()->GetRawAxis(1), Robot::oi->getJoystickR()->GetRawAxis(1));
+		Robot::drive->MyDrive(Robot::oi->getJoystickL()->GetRawAxis(1), -Robot::oi->getJoystickR()->GetRawAxis(1));
 	}
 	else
 	{
