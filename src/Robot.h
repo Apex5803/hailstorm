@@ -49,7 +49,7 @@ const int AUTO_DRVIE_FORWARD_PIN = 4;
 const int AUTO_DRIVE_FORWARD_ENC_PIN = 9;
 const int AUTO_R_TEN_B_PIN = 3;
 const int AUTO_GEAR_AND_BALLS_BLUE = 6;
-const int AUTO_GEAR_AND_BALLS_RED = 7;
+const int AUTO_GEAR_AND_BALLS_RED = 8;
 
 class Robot : public IterativeRobot {
 
@@ -62,7 +62,7 @@ private:
 	DigitalInput * blueTenBallAutoPin = new DigitalInput(3); // Blue alliance ten ball auto pin 3
 	DigitalInput * autoTurnTestPin = new DigitalInput (5);
 	DigitalInput * gearAndBallsBluePin = new DigitalInput (6);
-	DigitalInput * gearAndBallsRedPin = new DigitalInput (7);
+	DigitalInput * gearAndBallsRedPin = new DigitalInput (8);
 
 	std::string selectedAutonomous = "init";
 public:

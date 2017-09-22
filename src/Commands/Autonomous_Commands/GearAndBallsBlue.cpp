@@ -18,7 +18,7 @@ GearAndBallsBlue::GearAndBallsBlue() {
 	//printf ("placed gear /n");
 	AddSequential(new TankDrive(.5), .7);
 	//printf ("Moved toward intake /n");
-	AddSequential(new TankDrive(.75, -.75), .85);
+	AddSequential(new TankDrive(.75, -.75), .8);
 	//printf ("turned toward boiler");
 	AddSequential(new TankDrive(.6), 3);
 	//printf ("Drove toward boiler /n");
