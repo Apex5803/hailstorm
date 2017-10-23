@@ -58,7 +58,7 @@ private:
 	DigitalInput * redTenBallAutoPin = new DigitalInput(2); // Red alliance ten ball auto pin 2
 	DigitalInput * encoderGearAutoPin = new DigitalInput(1); // Encoder gear auto pin 1
 	DigitalInput * driveForwardAutoDeadReckoningPin = new DigitalInput(4); // Drive forward dead reckoning pin 4
-	DigitalInput * driveForwardEncoderPin = new DigitalInput(8); // Drive forward with encoders pin 9
+	DigitalInput * driveForwardEncoderPin = new DigitalInput(8); // Drive forward with encoders pin 8
 	DigitalInput * blueTenBallAutoPin = new DigitalInput(3); // Blue alliance ten ball auto pin 3
 	DigitalInput * autoTurnTestPin = new DigitalInput (5);
 	DigitalInput * gearAndBallsBluePin = new DigitalInput (6);
