@@ -42,7 +42,15 @@ void TankDrive::Execute(){
 	{
 //		Robot::driveTrain->MyDrive(-Robot::oi->getJoystickL()->GetRawAxis(1), Robot::oi->getJoystickR()->GetRawAxis(1));
 
+		//Robot::drive->MyDrive(Robot::oi->getDriveController(), 2, Robot::oi->getDriveController(), 1, false);
+
+		//THE NEXT LINE HERE RUNS TANKDRIVE EVEN THOUGH WE DELETED IT. WUT?
 		Robot::drive->MyDrive(Robot::oi->getJoystickL()->GetRawAxis(1), -Robot::oi->getJoystickR()->GetRawAxis(1));
+		//std::cout << "Currently in TankDrive" << "/n";
+
+		//THIS IS WHERE ALL THE PROBLEMS ARE. THIS IS THE ONLY WAY WE HAVE GOTTEN ARCADEDRIVE TO BE HAPPY. HAVE NOT DEPLOYED TO ROBOT
+		Robot::drive->drive->ArcadeDrive(Robot::oi->getDriveController()->GetStickForPort(3), 1, Robot::oi->getDriveController()->GetStickForPort(3), 4, true);
+		//Robot::drive->MyDrive(Robot::oi->getDriveController(), 1, Robot::oi->getDriveController(), 4, false);
 	}
 	else
 	{

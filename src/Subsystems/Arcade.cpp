@@ -1,4 +1,4 @@
-#include "Drive.h"
+#include "Arcade.h"
 
 #include "../RobotMap.h"
 
@@ -8,7 +8,7 @@
 
 
 
-Drive::Drive() : Subsystem("Drive")
+Arcade::Arcade() : Subsystem("Arcade")
 {
 
 	m_right_encoder = RobotMap::driveTraindBaseEncoderR;
@@ -30,7 +30,7 @@ Drive::Drive() : Subsystem("Drive")
 
 	// http://first.wpi.edu/FRC/roborio/release/docs/cpp/classRobotDrive.html#a47180c144fcca9e7550f7cb906c8b79a
 
-	drive = new RobotDrive(
+	arcade = new RobotDrive(
 
 		    dBaseL1,
 
@@ -43,13 +43,13 @@ Drive::Drive() : Subsystem("Drive")
 
 
 
-	drive->SetSafetyEnabled(false);
+	arcade->SetSafetyEnabled(false);
 
 }
 
 
 
-void Drive::InitDefaultCommand() {
+void Arcade::InitDefaultCommand() {
 
     // Set the default command for a subsystem here.
 
@@ -62,59 +62,55 @@ void Drive::InitDefaultCommand() {
 }
 
 
-
-void Drive::MyDrive(float left, float right)
-
-{
-
-	drive->TankDrive(left, right);
-
-}
-
-void Drive::MyDrive(Joystick * moveStick, int moveChannel, Joystick *rotateStick, int rotateChannel, bool why){
-	drive->ArcadeDrive(moveStick, moveChannel, rotateStick, rotateChannel, why);
-}
-
-
-
-void Drive::MyDrive(Joystick * leftStick, Joystick * rightStick)
+/*
+void Arcade::MyDrive(float left, float right)
 
 {
-	//THIS PRINT NEVER HAPPENED, ROBOT DROVE IN TANK MODE ANYWAY
-	std::cout << "Hi friends, I'm doing drive actions" << "/n";
-	//drive->ArcadeDrive(leftStick, 2, rightStick, 1, false);
-}
 
-int Drive::GetRightEncoder()
+	arcade->TankDrive(left, right);
+
+}
+*/
+
+
+//void Arcade::MyDrive(Joystick * moveStick, int moveChannel, Joystick *rotateStick, int rotateChannel);
+
+/*{
+
+	arcade->ArcadeDrive(moveStick->GetY(), moveChannel, rotateStick->GetX(), rotateChannel);
+
+}*/
+
+int Arcade::GetRightEncoder()
 {
 	return m_right_encoder->Get();
 }
 
-int Drive::GetLeftEncoder()
+int Arcade::GetLeftEncoder()
 {
 	return m_left_encoder->Get();
 }
 
-float Drive::GetYaw()
+float Arcade::GetYaw()
 {
 	return m_gyro->GetAngle();
 }
 
-void Drive::ResetEncoders()
+void Arcade::ResetEncoders()
 {
 	m_left_encoder->Reset();
 	m_right_encoder->Reset();
 }
 
-void Drive::CalibrateGyro()
+void Arcade::CalibrateGyro()
 {
 	m_gyro->Calibrate();
 }
 
 
-void Drive::Stop()
+void Arcade::Stop()
 {
-	drive->ArcadeDrive(0., 0.);
+	arcade->TankDrive(0., 0.);
 }
 
 

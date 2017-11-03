@@ -20,9 +20,9 @@
 
 
 
-#ifndef DRIVE_H
+#ifndef ARCADE_H
 
-#define DRIVE_H
+#define ARCADE_H
 
 #include "Commands/Subsystem.h"
 
@@ -38,7 +38,7 @@
 
  */
 
-class Drive: public Subsystem {
+class Arcade: public Subsystem {
 
 private:
 
@@ -80,25 +80,24 @@ private:
 
 	 */
 
-	//RobotDrive * drive;
+	RobotDrive * arcade;
 
 public:
-	//I moved this here to fix errors, is this really bad?
-	RobotDrive * drive;
+
 	/**
 	 * The number of encoder ticks per rotation
 	 */
-	const int TICKS_PER_ROTATION = 256;
+	//const int TICKS_PER_ROTATION = 256;
 
 	/**
 	 * The size of your wheels (in inches)
 	 */
-	const float WHEEL_DIAMETER = 3.5;
+	//const float WHEEL_DIAMETER = 3.5;
 
 	/**
 	 * This is the width of your robot (in inches)
 	 */
-	const float BASE_WIDTH = 26;
+	//const float BASE_WIDTH = 26;
 
 
 	/*
@@ -107,7 +106,7 @@ public:
 
 	 */
 
-	Drive();
+	Arcade();
 
 
 
@@ -133,9 +132,9 @@ public:
 
 	 */
 
-	void MyDrive(float, float);
+	//void MyDrive(float, float);
 
-	void MyDrive(Joystick *, int, Joystick *, int, bool);
+
 
 	/*
 
@@ -151,7 +150,7 @@ public:
 
 	 */
 
-	void MyDrive(Joystick *, Joystick *);
+	void MyDrive(Joystick *, int, Joystick *, int);
 
 	/**
 	 * Stops the robot

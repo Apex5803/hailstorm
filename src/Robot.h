@@ -65,6 +65,9 @@ private:
 	DigitalInput * gearAndBallsRedPin = new DigitalInput (9);
 
 	std::string selectedAutonomous = "init";
+
+	//class RobotDrive *myArcade;
+
 public:
 	Command *autonomousCommand;
 	static std::unique_ptr<OI> oi;
