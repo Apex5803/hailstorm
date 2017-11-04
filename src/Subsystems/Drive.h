@@ -28,7 +28,7 @@
 
 #include "WPILib.h"
 
-
+#include "CANTalon.h"
 
 /**
 
