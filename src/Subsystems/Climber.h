@@ -9,12 +9,12 @@
 #define SRC_SUBSYSTEMS_CLIMBER_H_
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
-
+#include "CANTalon.h"
 
 class Climber: public Subsystem {
 
 private:
-	std::shared_ptr<SpeedController> climber;
+	std::shared_ptr<CANTalon> climber;
 public:
 	Climber();
 

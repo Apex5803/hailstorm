@@ -13,6 +13,7 @@
 #define GEARER_H
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
+#include "CANTalon.h"
 
 /**
  *
