@@ -39,12 +39,12 @@ OI::OI() {
     ballCollectorForward->WhileHeld(new MoveBallCollector());
 */
     // This is the bumper--we want to collect when pressed and secure when released
-    gearerBumper.reset(new JoystickButton(xBoxController.get(), 5));
+    gearerBumper.reset(new JoystickButton(xBoxController.get(), 1));
     gearerBumper->WhileHeld(new CollectGear());
     gearerBumper->WhenReleased(new RetractGearerReal());
 
     // This is the trigger--we want to score when held and secure when released
-    gearerTrigger.reset(new AxisTrigger(xBoxController.get(), 2)); // 2 is the trigger axis corresponding to the left trigger, see https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/athena/src/XboxController.cpp
+    gearerTrigger.reset(new JoystickButton(xBoxController.get(), 2)); // 2 is the trigger axis corresponding to the left trigger, see https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/athena/src/XboxController.cpp
     gearerTrigger->WhileActive(new UnsecureAndScoreGear());
     gearerTrigger->WhenInactive(new RetractGearer());
 
