@@ -7,6 +7,7 @@
 
 #include <Subsystems/Climber.h>
 #include "../RobotMap.h"
+#include "CANTalon.h"
 Climber::Climber() : Subsystem("Climber"){
 	// TODO Auto-generated constructor stub
 

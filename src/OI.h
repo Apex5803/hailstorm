@@ -13,7 +13,7 @@
 #define OI_H
 
 #include "WPILib.h"
-#include "Custom/AxisTrigger.h"
+//#include "Custom/AxisTrigger.h"
 #include "Custom/POVTrigger.h"
 class OI {
 private:
@@ -29,7 +29,7 @@ private:
 	std::shared_ptr<JoystickButton> feederreverseButton;
 	std::shared_ptr<JoystickButton> magikarpetreverseButton;
 	std::shared_ptr<JoystickButton> climbButton;
-	std::shared_ptr<AxisTrigger> gearerTrigger;
+	std::shared_ptr<JoystickButton> gearerTrigger;
 	std::shared_ptr<JoystickButton> gearerBumper;
 	std::shared_ptr<POVTrigger> securerButton;
 	std::shared_ptr<POVTrigger> unsecurerButton;
