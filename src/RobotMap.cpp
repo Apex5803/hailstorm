@@ -25,8 +25,10 @@ std::shared_ptr<Encoder> RobotMap::driveTraindBaseEncoderL;
 std::shared_ptr<Encoder> RobotMap::driveTraindBaseEncoderR;
 std::shared_ptr<CANTalon> RobotMap::driveTraindBaseL1;
 std::shared_ptr<CANTalon> RobotMap::driveTraindBaseL2;
+std::shared_ptr<CANTalon> RobotMap::driveTraindBaseL3;
 std::shared_ptr<CANTalon> RobotMap::driveTraindBaseR1;
 std::shared_ptr<CANTalon> RobotMap::driveTraindBaseR2;
+std::shared_ptr<CANTalon> RobotMap::driveTraindBaseR3;
 std::shared_ptr<ADXRS450_Gyro> RobotMap::driveTraindBaseGyro;
 std::shared_ptr<CANTalon> RobotMap::gearergearRoller;
 std::shared_ptr<DoubleSolenoid> RobotMap::gearergearSolenoid1;
@@ -69,6 +71,12 @@ void RobotMap::init() {
     driveTraindBaseL2->SetInverted(true);
     lw->AddActuator("DriveTrain", "dBaseL2", std::static_pointer_cast<CANTalon>(driveTraindBaseL2));
 
+    driveTraindBaseL3.reset(new CANTalon(DRIVE_SPEED_LEFT_3));
+    driveTraindBaseL3->SetInverted(true);
+    driveTraindBaseL3->SetTalonControlMode(CANTalon::kFollowerMode);
+    driveTraindBaseL3->Set(DRIVE_SPEED_LEFT_2);
+    lw->AddActuator("DriveTrain", "dBaseL3", std::static_pointer_cast<CANTalon>(driveTraindBaseL3));
+
     driveTraindBaseR1.reset(new CANTalon(DRIVE_SPEED_RIGHT_1));
     driveTraindBaseR1->SetInverted(false);
     lw->AddActuator("DriveTrain", "dBaseR1", std::static_pointer_cast<CANTalon>(driveTraindBaseR1));
@@ -76,6 +84,12 @@ void RobotMap::init() {
     driveTraindBaseR2.reset(new CANTalon(DRIVE_SPEED_RIGHT_2));
     driveTraindBaseR2->SetInverted(false);
     lw->AddActuator("DriveTrain", "dBaseR2", std::static_pointer_cast<CANTalon>(driveTraindBaseR2));
+
+    driveTraindBaseR3.reset(new CANTalon(DRIVE_SPEED_RIGHT_3));
+    driveTraindBaseR3->SetInverted(false);
+    driveTraindBaseR3->SetTalonControlMode(CANTalon::kFollowerMode);
+    driveTraindBaseR3->Set(DRIVE_SPEED_RIGHT_2);
+    lw->AddActuator("DriveTrain", "dBaseR3", std::static_pointer_cast<CANTalon>(driveTraindBaseR3));
 
     driveTraindBaseGyro.reset(new ADXRS450_Gyro(SPI::Port::kOnboardCS2));
     lw->AddSensor("DriveTrain", "dBaseGyro", driveTraindBaseGyro);

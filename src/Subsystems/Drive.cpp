@@ -15,8 +15,10 @@ Drive::Drive() : Subsystem("Drive")
 	m_left_encoder = RobotMap::driveTraindBaseEncoderL;
     dBaseL1 = RobotMap::driveTraindBaseL1;
     dBaseL2 = RobotMap::driveTraindBaseL2;
+    dBaseL3 = RobotMap::driveTraindBaseL3;
     dBaseR1 = RobotMap::driveTraindBaseR1;
     dBaseR2 = RobotMap::driveTraindBaseR2;
+    dBaseR3 = RobotMap::driveTraindBaseR3;
     m_gyro = RobotMap::driveTraindBaseGyro;
     // You should probably add gyro for course correction, but I am going to be mega lazy and just use the encoders
     // If we were only using one encoder, you would be forced to use the gyro, but thanks for allowing my laziness!
@@ -36,9 +38,12 @@ Drive::Drive() : Subsystem("Drive")
 
 		    dBaseL2,
 
+
 		    dBaseR1,
 
-		    dBaseR2);
+		    dBaseR2
+
+	);
 
 
 

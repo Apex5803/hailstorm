@@ -31,18 +31,20 @@ const int CHANNEL_A_RIGHT_BASE_ENCODER = 10;
 const int CHANNEL_B_RIGHT_BASE_ENCODER = 11;
 
 // drive base speed controllers
-const int DRIVE_SPEED_LEFT_1 = 2;
-const int DRIVE_SPEED_LEFT_2 = 3;
-const int DRIVE_SPEED_RIGHT_1 = 0;
-const int DRIVE_SPEED_RIGHT_2 = 1;
+const int DRIVE_SPEED_LEFT_1 = 6;
+const int DRIVE_SPEED_LEFT_2 = 5;
+const int DRIVE_SPEED_LEFT_3 = 4;
+const int DRIVE_SPEED_RIGHT_1 = 3;
+const int DRIVE_SPEED_RIGHT_2 = 2;
+const int DRIVE_SPEED_RIGHT_3 = 1;
 
 // gearer stuff
-const int GEAR_DETECTOR = 0;
-const int GEAR_ROLLER = 4;
-const int GEAR_SOLENOID_1_FORWARD_CHANNEL= 2;
-const int GEAR_SOLENOID_1_REVERSE_CHANNEL = 5;
-const int GEAR_SOLENOID_2_FORWARD_CHANNEL = 2;
-const int GEAR_SOLENOID_2_REVERSE_CHANNEL = 5;
+//const int GEAR_DETECTOR = 0;
+const int GEAR_ROLLER =0;
+const int GEAR_SOLENOID_1_FORWARD_CHANNEL= 0;
+const int GEAR_SOLENOID_1_REVERSE_CHANNEL = 7;
+//const int GEAR_SOLENOID_2_FORWARD_CHANNEL = 1;
+//const int GEAR_SOLENOID_2_REVERSE_CHANNEL = 2;
 const int GEAR_SECURE_SOLENOID_FORWARD_CHANNEL = 1;
 const int GEAR_SECURE_SOLENOID_REVERSE_CHANNEL = 6;
 
@@ -71,7 +73,7 @@ const int S_ENCODER_A_BOOSTER = 7;
 const int S_ENCODER_B_BOOSTER = 8;
 */
 //climber
-const int C_MOTOR = 9;
+const int C_MOTOR = 7;
 
 //Intake Roller Current Limit
 const double INTAKE_ROLLER_CURRENT_LIMIT = 50.0;
@@ -85,8 +87,10 @@ public:
 
 	static std::shared_ptr<CANTalon> driveTraindBaseL1;
 	static std::shared_ptr<CANTalon> driveTraindBaseL2;
+	static std::shared_ptr<CANTalon> driveTraindBaseL3;
 	static std::shared_ptr<CANTalon> driveTraindBaseR1;
 	static std::shared_ptr<CANTalon> driveTraindBaseR2;
+	static std::shared_ptr<CANTalon> driveTraindBaseR3;
 
 	static std::shared_ptr<ADXRS450_Gyro> driveTraindBaseGyro;
 	static std::shared_ptr<DigitalInput> gearergearDetect;

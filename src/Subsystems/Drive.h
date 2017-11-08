@@ -56,7 +56,11 @@ private:
 	/*
 	 * The left back motor of the drive base
 	 */
+
 	std::shared_ptr<CANTalon> dBaseL2;
+
+
+	std::shared_ptr<CANTalon> dBaseL3;
 
 	/*
 	 * The right front motor of the drive base
@@ -67,6 +71,9 @@ private:
 	 * The right back motor of the drive base
 	 */
 	std::shared_ptr<CANTalon> dBaseR2;
+
+
+	std::shared_ptr<CANTalon> dBaseR3;
 
 	std::shared_ptr<Encoder> m_right_encoder;
 
